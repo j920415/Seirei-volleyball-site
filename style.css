@@ -40,3 +40,12 @@
 .language-button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 @media(max-width:900px){.header-actions{gap:10px}}
 @media(max-width:680px){.header-inner{gap:10px}.header-actions{gap:8px}.language-switch{font-size:10px;gap:4px}.language-button{padding:6px 2px}.menu-toggle{padding:7px 9px;font-size:11px}}
+
+/* Roster card colorways; portraits are typographic placeholders until individual art is added. */
+.art-ritsu{background:linear-gradient(145deg,#e5ebf6,#a9bfdc)}
+.art-takuya{background:linear-gradient(145deg,#e9e6f0,#c6b9d9)}
+.art-kouta{background:linear-gradient(145deg,#e8eef7,#c7d7eb)}
+.art-haruki{background:linear-gradient(145deg,#f2e8e5,#dfc1b9)}
+.art-haruto{background:linear-gradient(145deg,#e8f0f2,#c4d9e0)}
+.art-taiyou{background:linear-gradient(145deg,#f5eddf,#e1cda5)}
+.art-aki{background:linear-gradient(145deg,#e6f0e8,#b9d4c1)}

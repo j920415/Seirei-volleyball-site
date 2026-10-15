@@ -26,6 +26,12 @@ const translations = {
     pageTop:'PAGE TOP ↑', close:'閉じる', roleOH:'アウトサイドヒッター', roleL:'リベロ', monthSuffix:'月', yearSuffix:'年',
     position:'ポジション', school:'出身校', note:'人物メモ', grade:'学年', height:'身長', birthday:'誕生日',
     koutaRole:'アウトサイドヒッター / OUTSIDE HITTER', harutoRole:'リベロ / LIBERO',
+    roleSetter:'セッター', roleOpposite:'オポジット', roleMiddle:'ミドルブロッカー', captain:'主将', viceCaptain:'副主将', grade3:'3年生', grade2:'2年生',
+    gradeValue:'学年', heightValue:'身長', birthdayValue:'誕生日', jerseyValue:'背番号', dutyValue:'役職', captainDuty:'主将', viceCaptainDuty:'副主将',
+    ritsuRole:'セッター / SETTER', takuyaRole:'オポジット / OPPOSITE', koutaRole:'アウトサイドヒッター / OUTSIDE HITTER', harukiRole:'オポジット / OPPOSITE', harutoRole:'リベロ / LIBERO', taiyouRole:'ミドルブロッカー / MIDDLE BLOCKER', akiRole:'ミドルブロッカー / MIDDLE BLOCKER',
+    ritsuNote:'背番号1。チームの主将を務めるセッター。', takuyaNote:'背番号2。副主将を務めるオポジット。', koutaNote:'背番号3。アウトサイドヒッターとしてプレーする。', harukiNote:'背番号5。オポジットとしてプレーする。', harutoNote:'背番号6。リベロとして守備を担う。', taiyouNote:'背番号7。2年生のミドルブロッカー。', akiNote:'背番号8。2年生のミドルブロッカー。',
+    height178:'178 cm', height188:'188 cm', height187:'187 cm', height190:'190 cm', height168:'168 cm', height184:'184 cm', birthday1122:'11月22日', birthday0218:'2月18日', birthday1215:'12月15日', birthday0415:'4月15日', birthday1212:'12月12日', birthday0801:'8月1日', birthday1031:'10月31日',
+    jersey1:'#1', jersey2:'#2', jersey3:'#3', jersey5:'#5', jersey6:'#6', jersey7:'#7', jersey8:'#8',
     koutaPosition:'アウトサイドヒッター', harutoPosition:'リベロ', koutaNote:'明るく、チームの空気を動かす存在。',
     koutaProfileNote:'高校時代の設定をもとにしたプロフィールです。学年・身長・誕生日などの詳細は、確定した設定に合わせて追記できます。',
     harutoProfileNote:'落ち着いた守備でチームを支えるリベロ。', prevMonth:'前の月', nextMonth:'次の月',
@@ -56,25 +62,48 @@ const translations = {
 let currentLanguage = 'ja';
 
 const members = {
-  kouta: {
-    name: '高橋 康太', roman: 'TAKAHASHI KOUTA', roleKey: 'koutaRole',
-    rows: [['position', 'koutaPosition'], ['school', 'school']],
-    noteKey: 'koutaProfileNote',
-    searchTerms: '高橋 康太 たかはし こうた 타카하시 코우타 코우타 아웃サイドヒッター 아웃사이드 히터 OH 3年 187 12月15日'
-  },
-  haruto: {
-    name: '水野 陽翔', roman: 'MIZUNO HARUTO', roleKey: 'harutoRole',
-    rows: [['position', 'harutoPosition'], ['gradeValue', 'grade3'], ['heightValue', 'height168'], ['birthdayValue', 'birthday1212']],
-    noteKey: 'harutoProfileNote',
-    searchTerms: '水野 陽翔 みずの はると 미즈노 하루토 하루토 リベロ 리베로 libero 3年 3학년 168 12月12日 12월12일'
-  }
+  ritsu: { name:'藤崎 律', roman:'FUJISAKI RITSU', roleKey:'ritsuRole', rows:[['jerseyValue','jersey1'],['dutyValue','captainDuty'],['position','roleSetter'],['gradeValue','grade3'],['heightValue','height178'],['birthdayValue','birthday1122']], noteKey:'ritsuNote', searchTerms:'藤崎 律 ふじさき りつ 후지사키 리츠 setter 세터 주장 captain 3年 178 11月22日' },
+  takuya: { name:'石田 拓也', roman:'ISHIDA TAKUYA', roleKey:'takuyaRole', rows:[['jerseyValue','jersey2'],['dutyValue','viceCaptainDuty'],['position','roleOpposite'],['gradeValue','grade3'],['heightValue','height188'],['birthdayValue','birthday0218']], noteKey:'takuyaNote', searchTerms:'石田 拓也 いしだ たくや 이시다 타쿠야 opposite 아포짓 부주장 vice captain 3年 188 2月18日' },
+  kouta: { name:'高橋 康太', roman:'TAKAHASHI KOUTA', roleKey:'koutaRole', rows:[['jerseyValue','jersey3'],['position','koutaPosition'],['gradeValue','grade3'],['heightValue','height187'],['birthdayValue','birthday1215']], noteKey:'koutaNote', searchTerms:'高橋 康太 たかはし こうた 타카하시 코우타 아웃사이드 히터 アウトサイドヒッター OH 3年 187 12月15日' },
+  haruki: { name:'白川 春樹', roman:'SHIRAKAWA HARUKI', roleKey:'harukiRole', rows:[['jerseyValue','jersey5'],['position','roleOpposite'],['gradeValue','grade3'],['heightValue','height190'],['birthdayValue','birthday0415']], noteKey:'harukiNote', searchTerms:'白川 春樹 しらかわ はるき 시라카와 하루키 opposite 아포짓 3年 190 4月15日' },
+  haruto: { name:'水野 陽翔', roman:'MIZUNO HARUTO', roleKey:'harutoRole', rows:[['jerseyValue','jersey6'],['position','harutoPosition'],['gradeValue','grade3'],['heightValue','height168'],['birthdayValue','birthday1212']], noteKey:'harutoNote', searchTerms:'水野 陽翔 みずの はると 미즈노 하루토 libero 리베로 3年 168 12月12日' },
+  taiyou: { name:'赤城 太陽', roman:'AKAGI TAIYOU', roleKey:'taiyouRole', rows:[['jerseyValue','jersey7'],['position','roleMiddle'],['gradeValue','grade2'],['heightValue','height184'],['birthdayValue','birthday0801']], noteKey:'taiyouNote', searchTerms:'赤城 太陽 あかぎ たいよう 아카기 타이요 middle blocker 미들 블로커 2年 184 8月1日' },
+  aki: { name:'篠原 晶', roman:'SHINOHARA AKI', roleKey:'akiRole', rows:[['jerseyValue','jersey8'],['position','roleMiddle'],['gradeValue','grade2'],['heightValue','height188'],['birthdayValue','birthday1031']], noteKey:'akiNote', searchTerms:'篠原 晶 しのはら あき 시노하라 아키 middle blocker 미들 블로커 2年 188 10月31日' }
 };
+// Korean labels and values for all roster profiles.
+Object.assign(translations.ko, {
+  ritsuRole:'세터 / SETTER', takuyaRole:'아포짓 / OPPOSITE',
+  koutaRole:'아웃사이드 히터 / OUTSIDE HITTER', harukiRole:'아포짓 / OPPOSITE',
+  harutoRole:'리베로 / LIBERO', taiyouRole:'미들 블로커 / MIDDLE BLOCKER', akiRole:'미들 블로커 / MIDDLE BLOCKER',
+  roleSetter:'세터', roleOpposite:'아포짓', roleMiddle:'미들 블로커',
+  captain:'주장', viceCaptain:'부주장', captainDuty:'주장', viceCaptainDuty:'부주장',
+  ritsuNote:'등번호 1번. 팀의 주장을 맡은 세터.',
+  takuyaNote:'등번호 2번. 부주장을 맡은 아포짓.',
+  koutaNote:'등번호 3번. 아웃사이드 히터로 활약한다.',
+  harukiNote:'등번호 5번. 아포짓으로 활약한다.',
+  harutoNote:'등번호 6번. 수비를 책임지는 리베로.',
+  taiyouNote:'등번호 7번. 2학년 미들 블로커.',
+  akiNote:'등번호 8번. 2학년 미들 블로커.',
+  grade3:'3학년', grade2:'2학년',
+  height178:'178cm', height188:'188cm', height187:'187cm', height190:'190cm',
+  height168:'168cm', height184:'184cm',
+  birthday1122:'11월 22일', birthday0218:'2월 18일', birthday1215:'12월 15일',
+  birthday0415:'4월 15일', birthday1212:'12월 12일', birthday0801:'8월 1일', birthday1031:'10월 31일',
+  jersey1:'1번', jersey2:'2번', jersey3:'3번', jersey5:'5번', jersey6:'6번', jersey7:'7번', jersey8:'8번',
+  gradeValue:'학년', heightValue:'신장', birthdayValue:'생일', jerseyValue:'등번호', dutyValue:'직책',
+  koutaPosition:'아웃사이드 히터', harutoPosition:'리베로',
+  koutaNote:'밝은 성격으로 팀 분위기를 움직이는 존재.',
+  koutaProfileNote:'고등학교 시절 설정을 바탕으로 한 프로필입니다. 학년·신장·생일 등은 확정된 설정에 맞춰 추가할 수 있습니다.',
+  harutoProfileNote:'차분한 수비로 팀을 뒷받침하는 리베로.'
+});
+
 translations.ja.grade3 = '3年生'; translations.ko.grade3 = '3학년';
+translations.ja.grade2 = '2年生'; translations.ko.grade2 = '2학년';
 translations.ja.height168 = '168 cm'; translations.ko.height168 = '168 cm';
-translations.ja.birthday1212 = '12月12日'; translations.ko.birthday1212 = '12월 12일';
 translations.ja.gradeValue = '学年'; translations.ko.gradeValue = '학년';
 translations.ja.heightValue = '身長'; translations.ko.heightValue = '신장';
 translations.ja.birthdayValue = '誕生日'; translations.ko.birthdayValue = '생일';
+translations.ja.position = 'ポジション'; translations.ko.position = '포지션';
 
 function setLanguage(language, save = true) {
   currentLanguage = translations[language] ? language : 'ja';
