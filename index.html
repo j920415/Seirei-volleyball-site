@@ -11,7 +11,7 @@
 <body>
   <div class="topline">
     <div class="wrap top-line-inner">
-      <span>埼玉県立青嶺高等学校</span>
+      <span data-i18n="schoolNameShort">埼玉県立青嶺高等学校</span>
       <span>SEIREI HIGH SCHOOL · VOLLEYBALL CLUB</span>
     </div>
   </div>
@@ -24,12 +24,19 @@
           <div class="brand-en">VOLLEYBALL CLUB</div>
         </div>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">MENU ☰</button>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="言語選択 / 언어 선택">
+          <button type="button" class="language-button active" data-set-language="ja" aria-pressed="true">日本語</button>
+          <span aria-hidden="true">|</span>
+          <button type="button" class="language-button" data-set-language="ko" aria-pressed="false">한국어</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">MENU ☰</button>
+      </div>
       <nav id="mainNav" class="main-nav" aria-label="メインナビゲーション">
-        <a href="#about">部について</a>
-        <a href="#members">部員紹介</a>
-        <a href="#schedule">活動予定</a>
-        <a href="#guide">学校・世界観</a>
+        <a href="#about" data-i18n="navAbout">部について</a>
+        <a href="#members" data-i18n="navMembers">部員紹介</a>
+        <a href="#schedule" data-i18n="navSchedule">活動予定</a>
+        <a href="#guide" data-i18n="navGuide">学校・世界観</a>
       </nav>
     </div>
   </header>
@@ -41,34 +48,34 @@
       <div class="wrap hero-content">
         <p class="eyebrow">SEIREI HIGH SCHOOL / VOLLEYBALL CLUB</p>
         <h1>つなぐ。<br><span>その一球の先へ。</span></h1>
-        <p class="hero-copy">仲間と声を重ね、最後の一球まであきらめない。<br>青嶺高校バレーボール部のページへようこそ。</p>
-        <a class="primary-link" href="#members">部員紹介を見る <span aria-hidden="true">→</span></a>
+        <p class="hero-copy"><span data-i18n="heroCopy1">仲間と声を重ね、最後の一球まであきらめない。</span><br><span data-i18n="heroCopy2">青嶺高校バレーボール部のページへようこそ。</span></p>
+        <a class="primary-link" href="#members"><span data-i18n="heroButton">部員紹介を見る</span> <span aria-hidden="true">→</span></a>
       </div>
       <div class="hero-label">TEAM SPIRIT, ONE COURT.</div>
     </section>
 
-    <section class="quick-links wrap" aria-label="コンテンツ">
-      <a class="quick-card" href="#about"><span class="quick-num">01</span><span class="quick-title">部について</span><span class="quick-desc">ABOUT OUR CLUB</span><span class="arrow">↗</span></a>
-      <a class="quick-card" href="#members"><span class="quick-num">02</span><span class="quick-title">部員紹介</span><span class="quick-desc">OUR MEMBERS</span><span class="arrow">↗</span></a>
-      <a class="quick-card" href="#schedule"><span class="quick-num">03</span><span class="quick-title">活動予定</span><span class="quick-desc">SCHEDULE</span><span class="arrow">↗</span></a>
-      <a class="quick-card" href="#guide"><span class="quick-num">04</span><span class="quick-title">学校・世界観</span><span class="quick-desc">SCHOOL GUIDE</span><span class="arrow">↗</span></a>
+    <section class="quick-links wrap" aria-label="コンテンツ" data-i18n-aria="contentsLabel">
+      <a class="quick-card" href="#about"><span class="quick-num">01</span><span class="quick-title" data-i18n="navAbout">部について</span><span class="quick-desc">ABOUT OUR CLUB</span><span class="arrow">↗</span></a>
+      <a class="quick-card" href="#members"><span class="quick-num">02</span><span class="quick-title" data-i18n="navMembers">部員紹介</span><span class="quick-desc">OUR MEMBERS</span><span class="arrow">↗</span></a>
+      <a class="quick-card" href="#schedule"><span class="quick-num">03</span><span class="quick-title" data-i18n="navSchedule">活動予定</span><span class="quick-desc">SCHEDULE</span><span class="arrow">↗</span></a>
+      <a class="quick-card" href="#guide"><span class="quick-num">04</span><span class="quick-title" data-i18n="navGuide">学校・世界観</span><span class="quick-desc">SCHOOL GUIDE</span><span class="arrow">↗</span></a>
     </section>
 
     <section class="section wrap" id="about">
       <div class="section-heading">
-        <div><p class="eyebrow blue">ABOUT OUR CLUB</p><h2>青嶺高校バレーボール部</h2></div>
-        <p class="section-lead">勝つことだけじゃない。<br>ここで過ごす時間も、僕らの青春だ。</p>
+        <div><p class="eyebrow blue">ABOUT OUR CLUB</p><h2 data-i18n="aboutTitle">青嶺高校バレーボール部</h2></div>
+        <p class="section-lead"><span data-i18n="aboutLead1">勝つことだけじゃない。</span><br><span data-i18n="aboutLead2">ここで過ごす時間も、僕らの青春だ。</span></p>
       </div>
       <div class="about-grid">
         <div class="about-panel">
           <div class="big-kanji">青嶺</div>
-          <p>埼玉県立青嶺高等学校の男子バレーボール部。コートの中では真剣に、コートの外では自分たちらしく。選手とマネージャー、それぞれの立場からチームを支えています。</p>
+          <p data-i18n="aboutBody">埼玉県立青嶺高等学校の男子バレーボール部。コートの中では真剣に、コートの外では自分たちらしく。選手とマネージャー、それぞれの立場からチームを支えています。</p>
         </div>
         <div class="facts">
-          <div class="fact"><span>活動場所</span><strong>体育館</strong></div>
-          <div class="fact"><span>活動内容</span><strong>練習・練習試合・公式戦</strong></div>
-          <div class="fact"><span>大切にしていること</span><strong>声をつなぐこと、仲間を信じること</strong></div>
-          <p class="small-note">※このページは創作世界「青嶺高校」の設定紹介サイトです。</p>
+          <div class="fact"><span data-i18n="factPlace">活動場所</span><strong data-i18n="factPlaceValue">体育館</strong></div>
+          <div class="fact"><span data-i18n="factActivities">活動内容</span><strong data-i18n="factActivitiesValue">練習・練習試合・公式戦</strong></div>
+          <div class="fact"><span data-i18n="factValues">大切にしていること</span><strong data-i18n="factValuesValue">声をつなぐこと、仲間を信じること</strong></div>
+          <p class="small-note" data-i18n="fictionNote">※このページは創作世界「青嶺高校」の設定紹介サイトです。</p>
         </div>
       </div>
     </section>
@@ -76,68 +83,52 @@
     <section class="members-section" id="members">
       <div class="wrap section">
         <div class="section-heading">
-          <div><p class="eyebrow blue">OUR MEMBERS</p><h2>部員紹介</h2></div>
-          <p class="section-lead">同じコートに立つ、個性豊かな仲間たち。</p>
+          <div><p class="eyebrow blue">OUR MEMBERS</p><h2 data-i18n="membersTitle">部員紹介</h2></div>
+          <p class="section-lead" data-i18n="membersLead">同じコートに立つ、個性豊かな仲間たち。</p>
         </div>
         <div class="member-tools">
-          <label for="memberSearch">部員を探す</label>
-          <input id="memberSearch" type="search" placeholder="名前・ポジションで検索…" autocomplete="off">
+          <label for="memberSearch" data-i18n="searchLabel">部員を探す</label>
+          <input id="memberSearch" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="名前・ポジションで検索…" autocomplete="off">
         </div>
         <div class="member-grid" id="memberGrid">
-          <button class="member-card" data-name="高橋 康太 たかはし こうた アウトサイドヒッター OH" data-member="kouta" aria-label="高橋 康太のプロフィールを開く">
-            <div class="member-art art-kouta">
-              <span class="art-index">01 / PLAYER</span><span class="jersey">OH</span>
-              <div class="art-portrait" aria-label="イラスト差し替え予定" role="img"><span class="art-initial">康</span></div>
-              <span class="art-caption">ILLUSTRATION</span>
-            </div>
-            <div class="member-info">
-              <div class="member-info-top"><span class="member-grade">PLAYER PROFILE</span><span class="member-arrow" aria-hidden="true">↗</span></div>
-              <h3>高橋 康太</h3><p class="member-roman">TAKAHASHI KOUTA</p>
-              <div class="member-meta"><span>ポジション</span><strong>アウトサイドヒッター</strong></div>
-            </div>
+          <button class="member-card" data-name="高橋 康太 たかはし こうた アウトサイドヒッター OH" data-member="kouta">
+            <div class="member-art art-kouta"><span class="jersey">OH</span><span class="art-initial">K</span></div>
+            <div class="member-info"><span class="member-grade">PLAYER</span><h3>高橋 康太</h3><p>TAKAHASHI KOUTA</p><div class="member-meta"><span data-i18n="roleOH">アウトサイドヒッター</span><span>→</span></div></div>
           </button>
-          <button class="member-card" data-name="水野 陽翔 みずの はると リベロ libero" data-member="haruto" aria-label="水野 陽翔のプロフィールを開く">
-            <div class="member-art art-haruto">
-              <span class="art-index">02 / PLAYER</span><span class="jersey">L</span>
-              <div class="art-portrait" aria-label="イラスト差し替え予定" role="img"><span class="art-initial">陽</span></div>
-              <span class="art-caption">ILLUSTRATION</span>
-            </div>
-            <div class="member-info">
-              <div class="member-info-top"><span class="member-grade">PLAYER PROFILE</span><span class="member-arrow" aria-hidden="true">↗</span></div>
-              <h3>水野 陽翔</h3><p class="member-roman">MIZUNO HARUTO</p>
-              <div class="member-meta"><span>ポジション</span><strong>リベロ</strong></div>
-            </div>
+          <button class="member-card" data-name="水野 陽翔 みずの はると リベロ libero" data-member="haruto">
+            <div class="member-art art-haruto"><span class="jersey">L</span><span class="art-initial">H</span></div>
+            <div class="member-info"><span class="member-grade">PLAYER</span><h3>水野 陽翔</h3><p>MIZUNO HARUTO</p><div class="member-meta"><span data-i18n="roleL">リベロ</span><span>→</span></div></div>
           </button>
-          <div class="member-card coming-card"><div class="coming-mark">＋</div><div class="member-info"><span class="member-grade">COMING SOON</span><h3>ほかの部員たち</h3><p class="member-roman">MEMBERS TO BE ADDED</p><div class="member-meta"><span>プロフィール準備中</span></div></div></div>
+          <div class="member-card coming-card"><div class="coming-mark">＋</div><div class="member-info"><span class="member-grade">COMING SOON</span><h3 data-i18n="comingMembers">ほかの部員たち</h3><p>MEMBERS TO BE ADDED</p><div class="member-meta"><span data-i18n="profileSoon">プロフィール準備中</span></div></div></div>
         </div>
-        <p class="empty-message" id="emptyMessage" hidden>該当する部員が見つかりませんでした。</p>
+        <p class="empty-message" id="emptyMessage" hidden data-i18n="emptySearch">該当する部員が見つかりませんでした。</p>
       </div>
     </section>
 
     <section class="section wrap" id="schedule">
       <div class="section-heading">
-        <div><p class="eyebrow blue">SCHEDULE</p><h2>活動予定</h2></div>
-        <p class="section-lead">練習も試合も、一日ずつ積み重ねて。</p>
+        <div><p class="eyebrow blue">SCHEDULE</p><h2 data-i18n="scheduleTitle">活動予定</h2></div>
+        <p class="section-lead" data-i18n="scheduleLead">練習も試合も、一日ずつ積み重ねて。</p>
       </div>
       <div class="schedule-box">
         <div class="schedule-top"><div><span class="eyebrow">CLUB CALENDAR</span><h3 id="monthTitle">2026年 10月</h3></div><div class="month-controls"><button id="prevMonth" aria-label="前の月">←</button><button id="nextMonth" aria-label="次の月">→</button></div></div>
-        <div class="calendar-week"><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span><span>日</span></div>
+        <div class="calendar-week"><span data-i18n="mon">月</span><span data-i18n="tue">火</span><span data-i18n="wed">水</span><span data-i18n="thu">木</span><span data-i18n="fri">金</span><span data-i18n="sat">土</span><span data-i18n="sun">日</span></div>
         <div class="calendar-grid" id="calendarGrid"></div>
-        <div class="schedule-legend"><span><i class="dot practice"></i>通常練習（仮）</span><span><i class="dot game"></i>試合予定（仮）</span></div>
-        <p class="small-note">予定は動作確認用のサンプルです。正式な日程が決まったら編集できます。</p>
+        <div class="schedule-legend"><span><i class="dot practice"></i><span data-i18n="practiceLegend">通常練習（仮）</span></span><span><i class="dot game"></i><span data-i18n="gameLegend">試合予定（仮）</span></span></div>
+        <p class="small-note" data-i18n="scheduleNote">予定は動作確認用のサンプルです。正式な日程が決まったら編集できます。</p>
       </div>
     </section>
 
     <section class="guide-section" id="guide">
       <div class="wrap section">
         <div class="section-heading">
-          <div><p class="eyebrow">SCHOOL GUIDE</p><h2>青嶺について</h2></div>
-          <p class="section-lead">この物語の舞台と、コートの向こう側。</p>
+          <div><p class="eyebrow">SCHOOL GUIDE</p><h2 data-i18n="guideTitle">青嶺について</h2></div>
+          <p class="section-lead" data-i18n="guideLead">この物語の舞台と、コートの向こう側。</p>
         </div>
         <div class="guide-grid">
-          <article class="guide-card"><span class="guide-icon">校</span><div><h3>学校について</h3><p>埼玉県にある架空の県立高校。物語の舞台となる学校です。</p></div></article>
-          <article class="guide-card"><span class="guide-icon">球</span><div><h3>バレーボール部</h3><p>選手たちとマネージャーが、練習や学校生活を通して日々を重ねています。</p></div></article>
-          <article class="guide-card"><span class="guide-icon">縁</span><div><h3>登場人物の関係</h3><p>プロフィールや関係性は、設定が確定したものから順次追加していきます。</p></div></article>
+          <article class="guide-card"><span class="guide-icon">校</span><div><h3 data-i18n="guideSchoolTitle">学校について</h3><p data-i18n="guideSchoolBody">埼玉県にある架空の県立高校。物語の舞台となる学校です。</p></div></article>
+          <article class="guide-card"><span class="guide-icon">球</span><div><h3 data-i18n="guideClubTitle">バレーボール部</h3><p data-i18n="guideClubBody">選手たちとマネージャーが、練習や学校生活を通して日々を重ねています。</p></div></article>
+          <article class="guide-card"><span class="guide-icon">縁</span><div><h3 data-i18n="guideRelationTitle">登場人物の関係</h3><p data-i18n="guideRelationBody">プロフィールや関係性は、設定が確定したものから順次追加していきます。</p></div></article>
         </div>
       </div>
     </section>
@@ -147,12 +138,12 @@
     <div class="wrap footer-inner">
       <a class="brand footer-brand" href="#home"><div class="school-mark">青</div><div><div class="brand-jp">埼玉県立 青嶺高等学校</div><div class="brand-en">VOLLEYBALL CLUB</div></div></a>
       <p>© SEIREI HIGH SCHOOL VOLLEYBALL CLUB · FICTIONAL WORLD</p>
-      <a class="back-top" href="#home">PAGE TOP ↑</a>
+      <a class="back-top" href="#home" data-i18n="pageTop">PAGE TOP ↑</a>
     </div>
   </footer>
 
   <dialog id="memberDialog" class="member-dialog">
-    <button class="dialog-close" id="dialogClose" aria-label="閉じる">×</button>
+    <button class="dialog-close" id="dialogClose" aria-label="閉じる" data-i18n-aria="close">×</button>
     <div id="dialogContent"></div>
   </dialog>
   <script src="script.js"></script>
