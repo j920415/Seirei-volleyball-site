@@ -119,3 +119,83 @@
   line-height: 1;
 }
 
+
+
+/* Player ability radar chart */
+.ability-section {
+  margin: 28px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  text-align: center;
+}
+.ability-heading h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.ability-heading p {
+  margin: 3px 0 0;
+  color: #8191a7;
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+.ability-chart {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  margin: 3px auto 0;
+  overflow: visible;
+}
+.ability-grid polygon {
+  fill: none;
+  stroke: #d5dfeb;
+  stroke-width: 1;
+}
+.ability-axes line {
+  stroke: #d5dfeb;
+  stroke-width: 1;
+}
+.ability-shape {
+  fill: #8db5e3;
+  fill-opacity: .38;
+  stroke: #315b8a;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.ability-dots circle {
+  fill: #315b8a;
+}
+.ability-labels text {
+  fill: #526b8a;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+}
+.ability-values {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  max-width: 440px;
+  margin: -3px auto 0;
+}
+.ability-values span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #74869f;
+  font-size: 10px;
+}
+.ability-values strong {
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+}
+@media(max-width:560px) {
+  .ability-section { margin-top: 22px; padding-top: 20px; }
+  .ability-chart { width: min(100%, 330px); }
+  .ability-values { gap: 5px 11px; }
+  .ability-values span { font-size: 9px; }
+}

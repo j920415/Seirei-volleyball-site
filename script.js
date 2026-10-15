@@ -34,7 +34,7 @@ const translations = {
     jersey1:'#1', jersey2:'#2', jersey3:'#3', jersey5:'#5', jersey6:'#6', jersey7:'#7', jersey8:'#8',
     koutaPosition:'アウトサイドヒッター', harutoPosition:'リベロ', koutaNote:'明るく、チームの空気を動かす存在。',
     koutaProfileNote:'高校時代の設定をもとにしたプロフィールです。学年・身長・誕生日などの詳細は、確定した設定に合わせて追記できます。',
-    harutoProfileNote:'落ち着いた守備でチームを支えるリベロ。', prevMonth:'前の月', nextMonth:'次の月',
+    harutoProfileNote:'落ち着いた守備でチームを支えるリベロ。', prevMonth:'前の月', nextMonth:'次の月', abilitiesTitle:'PLAYER ABILITIES', abilitiesScale:'能力値 · 1–10', abilityAttack:'攻撃力', abilityDefense:'守備力', abilityServe:'サーブ', abilityReceive:'レシーブ', abilityBlock:'ブロック', abilitySpeed:'スピード',
     practiceEvent:'通常練習', gameEvent:'練習試合'
   },
   ko: {
@@ -55,7 +55,7 @@ const translations = {
     koutaRole:'아웃사이드 히터 / OUTSIDE HITTER', harutoRole:'리베로 / LIBERO',
     koutaPosition:'아웃사이드 히터', harutoPosition:'리베로', koutaNote:'밝은 성격으로 팀 분위기를 움직이는 존재.',
     koutaProfileNote:'고등학교 시절 설정을 바탕으로 한 프로필입니다. 학년·신장·생일 등은 확정된 설정에 맞춰 추가할 수 있습니다.',
-    harutoProfileNote:'차분한 수비로 팀을 뒷받침하는 리베로.', prevMonth:'이전 달', nextMonth:'다음 달',
+    harutoProfileNote:'차분한 수비로 팀을 뒷받침하는 리베로.', prevMonth:'이전 달', nextMonth:'다음 달', abilitiesTitle:'PLAYER ABILITIES', abilitiesScale:'능력치 · 1–10', abilityAttack:'공격력', abilityDefense:'수비력', abilityServe:'서브', abilityReceive:'리시브', abilityBlock:'블로킹', abilitySpeed:'스피드',
     practiceEvent:'정기 훈련', gameEvent:'연습 경기'
   }
 };
@@ -69,6 +69,18 @@ const members = {
   haruto: { name:'水野 陽翔', roman:'MIZUNO HARUTO', roleKey:'harutoRole', rows:[['jerseyValue','jersey6'],['position','harutoPosition'],['gradeValue','grade3'],['heightValue','height168'],['birthdayValue','birthday1212']], noteKey:'harutoNote', searchTerms:'水野 陽翔 みずの はると 미즈노 하루토 libero 리베로 3年 168 1999年12月12日' },
   taiyou: { name:'赤城 太陽', roman:'AKAGI TAIYOU', roleKey:'taiyouRole', rows:[['jerseyValue','jersey7'],['position','roleMiddle'],['gradeValue','grade2'],['heightValue','height184'],['birthdayValue','birthday0801']], noteKey:'taiyouNote', searchTerms:'赤城 太陽 あかぎ たいよう 아카기 타이요 middle blocker 미들 블로커 2年 184 2000年8月1日' },
   aki: { name:'篠原 晶', roman:'SHINOHARA AKI', roleKey:'akiRole', rows:[['jerseyValue','jersey8'],['position','roleMiddle'],['gradeValue','grade2'],['heightValue','height188'],['birthdayValue','birthday1031']], noteKey:'akiNote', searchTerms:'篠原 晶 しのはら あき 시노하라 아키 middle blocker 미들 블로커 2年 188 2000年10月31日' }
+};
+
+// Shared 1–10 ability ratings for the Seirei roster.
+// Order: attack, defense, serve, receive, block, speed.
+const memberAbilities = {
+  ritsu:  [7, 8, 7, 7, 6, 8],
+  takuya: [7, 10, 7, 9, 7, 7],
+  kouta:  [10, 8, 9, 8, 7, 8],
+  haruki: [8, 8, 8, 8, 8, 8],
+  haruto: [4, 9, 5, 10, 1, 9],
+  taiyou: [7, 9, 7, 8, 10, 7],
+  aki:    [9, 7, 10, 7, 7, 8]
 };
 // Korean labels and values for all roster profiles.
 Object.assign(translations.ko, {
@@ -143,6 +155,59 @@ document.querySelectorAll('[data-set-language]').forEach(button => {
 
 const dialog = document.getElementById('memberDialog');
 const dialogContent = document.getElementById('dialogContent');
+
+function renderAbilityChart(key, t) {
+  const values = memberAbilities[key];
+  if (!values) return '';
+  const labels = [
+    t.abilityAttack, t.abilityDefense, t.abilityServe,
+    t.abilityReceive, t.abilityBlock, t.abilitySpeed
+  ];
+  const cx = 180, cy = 118, maxRadius = 76;
+  const point = (index, radius) => {
+    const angle = (-90 + index * 60) * Math.PI / 180;
+    return `${(cx + Math.cos(angle) * radius).toFixed(2)},${(cy + Math.sin(angle) * radius).toFixed(2)}`;
+  };
+  const polygonPoints = radius => values.map((value, index) =>
+    point(index, radius * value / 10)
+  ).join(' ');
+  const grid = [2, 4, 6, 8, 10].map(level =>
+    `<polygon points="${Array.from({length: 6}, (_, i) => point(i, maxRadius * level / 10)).join(' ')}" />`
+  ).join('');
+  const axes = labels.map((label, index) => {
+    const angle = (-90 + index * 60) * Math.PI / 180;
+    return `<line x1="${cx}" y1="${cy}" x2="${(cx + Math.cos(angle) * maxRadius).toFixed(2)}" y2="${(cy + Math.sin(angle) * maxRadius).toFixed(2)}" />`;
+  }).join('');
+  const labelPositions = labels.map((label, index) => {
+    const angle = (-90 + index * 60) * Math.PI / 180;
+    const x = cx + Math.cos(angle) * 101;
+    const y = cy + Math.sin(angle) * 101;
+    const anchor = Math.cos(angle) > 0.35 ? 'start' : Math.cos(angle) < -0.35 ? 'end' : 'middle';
+    const dy = Math.sin(angle) < -0.7 ? -2 : Math.sin(angle) > 0.7 ? 12 : 4;
+    return `<text x="${x.toFixed(2)}" y="${(y + dy).toFixed(2)}" text-anchor="${anchor}">${label}</text>`;
+  }).join('');
+  const dots = values.map((value, index) => {
+    const angle = (-90 + index * 60) * Math.PI / 180;
+    const radius = maxRadius * value / 10;
+    return `<circle cx="${(cx + Math.cos(angle) * radius).toFixed(2)}" cy="${(cy + Math.sin(angle) * radius).toFixed(2)}" r="3" />`;
+  }).join('');
+  return `
+    <section class="ability-section" aria-label="${t.abilitiesTitle}">
+      <div class="ability-heading">
+        <h3>${t.abilitiesTitle}</h3>
+        <p>${t.abilitiesScale}</p>
+      </div>
+      <svg class="ability-chart" viewBox="0 0 360 244" role="img" aria-label="${labels.map((label, i) => `${label} ${values[i]}`).join(', ')}">
+        <g class="ability-grid">${grid}</g>
+        <g class="ability-axes">${axes}</g>
+        <polygon class="ability-shape" points="${polygonPoints(maxRadius)}" />
+        <g class="ability-dots">${dots}</g>
+        <g class="ability-labels">${labelPositions}</g>
+      </svg>
+      <div class="ability-values">${labels.map((label, i) => `<span><b>${label}</b><strong>${values[i]}</strong></span>`).join('')}</div>
+    </section>`;
+}
+
 function renderMemberDialog(key) {
   const m = members[key];
   if (!m) return;
@@ -176,10 +241,10 @@ const portraitFiles = {
       <div class="profile-layout">
         <div class="profile-details">
           <table class="profile-table"><tbody>${rows}</tbody></table>
-          <p class="profile-note">${t[m.noteKey]}</p>
         </div>
         ${portrait}
       </div>
+      ${renderAbilityChart(key, t)}
     </div>`;
 
   dialog.dataset.memberKey = key;
