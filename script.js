@@ -381,16 +381,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  enter.addEventListener('click', async () => {
+  enter.addEventListener('click', () => {
     if (entered) return;
     entered = true;
+
+    // Start the visual transition immediately. Audio playback can be delayed by
+    // the browser, so it must never block the intro from opening.
     player.hidden = false;
-    await chooseTrack(0, true);
     intro.classList.add('is-opening');
     window.setTimeout(() => {
       intro.hidden = true;
       document.body.classList.add('intro-complete');
     }, 1250);
+
+    // Attempt playback independently; a playback/network error should not
+    // prevent the page transition.
+    chooseTrack(0, true).catch(() => updatePlayButton(false));
   });
 
   toggle.addEventListener('click', async () => {
