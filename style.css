@@ -201,6 +201,7 @@
 }
 
 /* ===== Seirei intro screen and door-opening transition ===== */
+.intro-screen[hidden]{display:none!important}
 .intro-screen{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:#cfe5f7;color:#17385f;isolation:isolate}
 .intro-backdrop{position:absolute;inset:0;background:#cfe5f7 url('images/seirei-intro.svg') center/cover no-repeat;z-index:-2;transform:scale(1.015)}
 .intro-screen:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(236,247,255,.12),rgba(15,43,78,.2));z-index:-1}
