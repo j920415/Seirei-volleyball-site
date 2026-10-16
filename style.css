@@ -199,3 +199,33 @@
   .ability-values { gap: 5px 11px; }
   .ability-values span { font-size: 9px; }
 }
+
+/* ===== Seirei intro screen and door-opening transition ===== */
+.intro-screen{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:#cfe5f7;color:#17385f;isolation:isolate}
+.intro-backdrop{position:absolute;inset:0;background:#cfe5f7 url('images/seirei-intro.svg') center/cover no-repeat;z-index:-2;transform:scale(1.015)}
+.intro-screen:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(236,247,255,.12),rgba(15,43,78,.2));z-index:-1}
+.intro-copy{width:min(90%,650px);text-align:center;padding:30px 18px 40px;position:relative;z-index:2;text-shadow:0 1px 12px rgba(255,255,255,.45)}
+.intro-eyebrow{font-size:10px;letter-spacing:.3em;font-weight:800;margin:0 0 24px;color:#315c86}
+.intro-kanji{font-family:'Shippori Mincho',serif;letter-spacing:.22em;font-size:clamp(12px,2vw,17px);margin:0 0 7px;color:#315c86}
+.intro-copy h1{font-family:'Shippori Mincho',serif;font-size:clamp(36px,7vw,68px);font-weight:600;letter-spacing:.12em;line-height:1.3;margin:0;color:#17385f}
+.intro-english{font-size:clamp(9px,1.5vw,12px);letter-spacing:.32em;font-weight:800;margin:13px 0 0;color:#315c86}
+.intro-tagline{font-family:'Shippori Mincho',serif;font-size:14px;letter-spacing:.18em;margin:27px 0 30px;color:#234a74}
+.intro-enter{display:inline-flex;align-items:center;justify-content:center;gap:42px;min-width:210px;padding:16px 22px;border:1px solid rgba(255,255,255,.9);background:rgba(255,255,255,.88);color:#234a74;font-size:11px;letter-spacing:.17em;font-weight:800;cursor:pointer;box-shadow:0 8px 25px rgba(31,62,96,.12);transition:transform .2s,background .2s}
+.intro-enter:hover{transform:translateY(-3px);background:#fff}.intro-enter:focus-visible{outline:3px solid #234a74;outline-offset:4px}
+.intro-music-note{font-size:10px;letter-spacing:.08em;color:#234a74;margin:18px 0 0}
+.intro-hint{position:absolute;bottom:19px;left:0;right:0;text-align:center;font-size:8px;letter-spacing:.28em;color:#fff;text-shadow:0 1px 5px #234a74;z-index:3}
+.intro-door{position:absolute;top:0;bottom:0;width:50.2%;z-index:1;background:linear-gradient(90deg,rgba(23,56,95,.16),rgba(255,255,255,.16)),rgba(224,238,249,.12);border-color:rgba(255,255,255,.65);pointer-events:none;transition:transform 1.15s cubic-bezier(.72,0,.22,1)}
+.intro-door:after{content:"";position:absolute;top:0;bottom:0;width:12px;background:rgba(255,255,255,.22);box-shadow:0 0 24px rgba(25,60,100,.08)}
+.intro-door-left{left:0;border-right:1px solid rgba(255,255,255,.65);transform-origin:left center}.intro-door-left:after{right:0}
+.intro-door-right{right:0;border-left:1px solid rgba(255,255,255,.65);transform-origin:right center}.intro-door-right:after{left:0}
+.intro-screen.is-opening .intro-door-left{transform:perspective(1200px) rotateY(-100deg)}.intro-screen.is-opening .intro-door-right{transform:perspective(1200px) rotateY(100deg)}
+.intro-screen.is-opening .intro-copy,.intro-screen.is-opening .intro-hint{opacity:0;transition:opacity .45s ease}.intro-screen.is-opening{background:transparent;transition:background .8s ease 0.25s}
+.music-player{position:fixed;right:18px;bottom:18px;z-index:1000;width:min(300px,calc(100vw - 28px));padding:12px;background:rgba(25,53,87,.94);border:1px solid rgba(255,255,255,.55);box-shadow:0 8px 28px rgba(15,35,60,.24);color:#fff;backdrop-filter:blur(12px)}
+.music-player[hidden]{display:none}.music-player-label{display:block;margin:0 0 6px;font-size:9px;font-weight:800;letter-spacing:.18em;color:#cfe3fb}
+.music-track{width:100%;min-width:0;padding:8px 9px;border:1px solid rgba(255,255,255,.4);border-radius:0;background:#f8fbff;color:#24446f;font:inherit;font-size:12px;outline-offset:3px}
+.music-player-controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:9px}
+.music-toggle,.music-control{position:static;display:inline-flex;align-items:center;justify-content:center;min-height:34px;border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.12);color:#fff;padding:8px 12px;font-size:10px;letter-spacing:.08em;cursor:pointer;box-shadow:none}
+.music-toggle{flex:1;background:rgba(255,255,255,.18);font-weight:800}.music-control{min-width:42px;font-size:13px}
+.music-toggle:focus-visible,.music-control:focus-visible,.music-track:focus-visible{outline:2px solid #8fb8e8;outline-offset:3px}
+@media(max-width:600px){.intro-backdrop{background-position:center}.intro-copy{padding-inline:12px}.intro-tagline{margin:22px 0 26px}.intro-enter{min-width:190px;padding:15px 18px}.music-player{right:10px;bottom:10px;width:min(280px,calc(100vw - 20px))}}
+@media(prefers-reduced-motion:reduce){.intro-door,.intro-enter,.intro-copy,.intro-hint{transition-duration:.01ms!important}}

@@ -334,3 +334,86 @@ document.addEventListener('DOMContentLoaded', () => {
   try { savedLanguage = localStorage.getItem('seirei-language') || 'ja'; } catch (_) {}
   setLanguage(savedLanguage, false);
 });
+
+// Intro screen and three-track Seirei OST player.
+(() => {
+  const intro = document.getElementById('introScreen');
+  const enter = document.getElementById('introEnter');
+  const music = document.getElementById('seireiTheme');
+  const player = document.getElementById('musicPlayer');
+  const trackSelect = document.getElementById('musicTrack');
+  const toggle = document.getElementById('musicToggle');
+  const prev = document.getElementById('musicPrev');
+  const next = document.getElementById('musicNext');
+  if (!intro || !enter || !music || !player || !trackSelect || !toggle || !prev || !next) return;
+
+  const tracks = [
+    { id: 'summer-court', title: 'Summer Court Rhythm', src: 'audio/Summer-Court-Rhythm.mp3' },
+    { id: 'summer-rally', title: 'Summer Rally', src: 'audio/Summer-Rally.mp3' },
+    { id: 'spring-match', title: '春の試合前', src: 'audio/春の試合前.mp3' }
+  ];
+  let currentIndex = 0;
+  let entered = false;
+
+  function updatePlayButton(isPlaying) {
+    toggle.textContent = isPlaying ? '♫ PAUSE' : '♫ PLAY';
+    toggle.setAttribute('aria-pressed', String(isPlaying));
+    toggle.setAttribute('aria-label', isPlaying ? '음악 일시정지' : '음악 재생');
+  }
+
+  async function chooseTrack(index, autoplay = false) {
+    currentIndex = (index + tracks.length) % tracks.length;
+    const track = tracks[currentIndex];
+    trackSelect.value = track.id;
+    music.src = track.src;
+    music.load();
+    if (autoplay) {
+      try {
+        music.volume = 0.45;
+        await music.play();
+        updatePlayButton(true);
+      } catch (_) {
+        updatePlayButton(false);
+      }
+    } else {
+      music.pause();
+      updatePlayButton(false);
+    }
+  }
+
+  enter.addEventListener('click', async () => {
+    if (entered) return;
+    entered = true;
+    player.hidden = false;
+    await chooseTrack(0, true);
+    intro.classList.add('is-opening');
+    window.setTimeout(() => {
+      intro.hidden = true;
+      document.body.classList.add('intro-complete');
+    }, 1250);
+  });
+
+  toggle.addEventListener('click', async () => {
+    if (music.paused) {
+      try {
+        if (!music.src) await chooseTrack(currentIndex, false);
+        await music.play();
+        updatePlayButton(true);
+      } catch (_) {
+        updatePlayButton(false);
+      }
+    } else {
+      music.pause();
+      updatePlayButton(false);
+    }
+  });
+
+  trackSelect.addEventListener('change', async () => {
+    const index = tracks.findIndex(track => track.id === trackSelect.value);
+    const shouldContinue = !music.paused;
+    await chooseTrack(index < 0 ? 0 : index, shouldContinue);
+  });
+  prev.addEventListener('click', () => chooseTrack(currentIndex - 1, true));
+  next.addEventListener('click', () => chooseTrack(currentIndex + 1, true));
+  music.addEventListener('ended', () => chooseTrack(currentIndex + 1, true));
+})();

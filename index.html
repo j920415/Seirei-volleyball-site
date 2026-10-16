@@ -9,6 +9,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- SEIREI INTRO: first-visit landing screen -->
+  <section class="intro-screen" id="introScreen" aria-label="Seirei High School introduction">
+    <div class="intro-backdrop" aria-hidden="true"></div>
+    <div class="intro-copy">
+      <p class="intro-eyebrow">SAITAMA, JAPAN</p>
+      <p class="intro-kanji">埼玉県立</p>
+      <h1>青嶺高等学校</h1>
+      <p class="intro-english">SEIREI HIGH SCHOOL</p>
+      <p class="intro-tagline">青い空の向こうへ。</p>
+      <button class="intro-enter" id="introEnter" type="button">
+        <span>ENTER SEIREI</span><span aria-hidden="true">↗</span>
+      </button>
+      <p class="intro-music-note">♪ SEIREI ORIGINAL SOUNDTRACK</p>
+    </div>
+    <div class="intro-door intro-door-left" aria-hidden="true"></div>
+    <div class="intro-door intro-door-right" aria-hidden="true"></div>
+    <p class="intro-hint">CLICK TO ENTER</p>
+  </section>
+  <audio id="seireiTheme" preload="metadata"></audio>
+  <div id="musicPlayer" class="music-player" hidden aria-label="Seirei original soundtrack player">
+    <label class="music-player-label" for="musicTrack">SEIREI OST</label>
+    <select id="musicTrack" class="music-track" aria-label="음악 선택">
+      <option value="summer-court">Summer Court Rhythm</option>
+      <option value="summer-rally">Summer Rally</option>
+      <option value="spring-match">春の試合前</option>
+    </select>
+    <div class="music-player-controls">
+      <button id="musicPrev" class="music-control" type="button" aria-label="이전 곡" title="이전 곡">⏮</button>
+      <button id="musicToggle" class="music-toggle" type="button" aria-pressed="false" aria-label="음악 재생">♫ PLAY</button>
+      <button id="musicNext" class="music-control" type="button" aria-label="다음 곡" title="다음 곡">⏭</button>
+    </div>
+  </div>
+
+
   <div class="topline">
     <div class="wrap top-line-inner">
       <span data-i18n="schoolNameShort">埼玉県立青嶺高等学校</span>
