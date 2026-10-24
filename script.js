@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(savedLanguage, false);
 });
 
-// Intro screen and three-track Seirei OST player.
+// Intro screen and seven-track Seirei OST player.
 (() => {
   const intro = document.getElementById('introScreen');
   const enter = document.getElementById('introEnter');
@@ -350,7 +350,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const tracks = [
     { id: 'summer-court', title: 'Summer Court Rhythm', src: 'audio/Summer-Court-Rhythm.mp3' },
     { id: 'summer-rally', title: 'Summer Rally', src: 'audio/Summer-Rally.mp3' },
-    { id: 'spring-match', title: '春の試合前', src: 'audio/春の試合前.mp3' }
+    { id: 'spring-match', title: '春の試合前', src: 'audio/春の試合前.mp3' },
+    { id: 'autumn-court', title: '秋のコート', src: 'audio/Autumn-Court.mp3' },
+    { id: 'autumn-afterglow', title: 'Autumn Afterglow', src: 'audio/Autumn-Afterglow.mp3' },
+    { id: 'snowlight-memories', title: 'Snowlight Memories', src: 'audio/Snowlight-Memories.mp3' },
+    { id: 'snowy-afternoon-classroom', title: '雪降る午後の教室', src: 'audio/Snowy-Afternoon-Classroom.mp3' }
   ];
   let currentIndex = 0;
   let entered = false;
