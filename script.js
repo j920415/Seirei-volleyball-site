@@ -19,7 +19,7 @@ const translations = {
     fictionNote:'※このページは創作世界「青嶺高校」の設定紹介サイトです。', membersTitle:'部員紹介', membersLead:'同じコートに立つ、個性豊かな仲間たち。',
     searchLabel:'部員を探す', searchPlaceholder:'名前・ポジションで検索…', comingMembers:'ほかの部員たち', profileSoon:'プロフィール準備中', emptySearch:'該当する部員が見つかりませんでした。',
     scheduleTitle:'活動予定', scheduleLead:'練習も試合も、一日ずつ積み重ねて。', mon:'月', tue:'火', wed:'水', thu:'木', fri:'金', sat:'土', sun:'日',
-    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。',
+    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', birthdayLegend:'部員の誕生日', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。',
     guideTitle:'青嶺について', guideLead:'この物語の舞台と、コートの向こう側。', guideSchoolTitle:'学校について', guideSchoolBody:'埼玉県にある架空の県立高校。物語の舞台となる学校です。',
     guideClubTitle:'バレーボール部', guideClubBody:'選手たちとマネージャーが、練習や学校生活を通して日々を重ねています。',
     guideRelationTitle:'登場人物の関係', guideRelationBody:'プロフィールや関係性は、設定が確定したものから順次追加していきます。',
@@ -35,7 +35,7 @@ const translations = {
     koutaPosition:'アウトサイドヒッター', harutoPosition:'リベロ', koutaNote:'明るく、チームの空気を動かす存在。',
     koutaProfileNote:'高校時代の設定をもとにしたプロフィールです。学年・身長・誕生日などの詳細は、確定した設定に合わせて追記できます。',
     harutoProfileNote:'落ち着いた守備でチームを支えるリベロ。', prevMonth:'前の月', nextMonth:'次の月', abilitiesTitle:'PLAYER ABILITIES', abilitiesScale:'能力値 · 1–10', abilityAttack:'攻撃力', abilityDefense:'守備力', abilityServe:'サーブ', abilityReceive:'レシーブ', abilityBlock:'ブロック', abilitySpeed:'スピード',
-    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。',
+    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', birthdayLegend:'部員の誕生日', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。',
     eventSemester:'新学期開始・入学式', eventClasses:'授業開始', eventRecruit:'新入部員募集', eventResume:'授業再開', eventMidterm:'1学期中間試験', eventNishigo:'西高との練習試合', eventCamp:'短期合宿', eventInterhigh:'インターハイ埼玉県予選', eventSports:'体育祭（クラス対抗）', eventFinal:'1学期期末試験', eventClosing:'1学期終業式', eventSummer:'夏休み開始', eventGoldenStart:'ゴールデンウィーク開始', eventGoldenEnd:'ゴールデンウィーク最終日'
   },
   ko: {
@@ -47,7 +47,7 @@ const translations = {
     fictionNote:'※ 이 페이지는 창작 세계 「세이레이 고등학교」의 설정 소개 사이트입니다.', membersTitle:'선수 소개', membersLead:'같은 코트에 서는 개성 넘치는 동료들.',
     searchLabel:'선수 검색', searchPlaceholder:'이름·포지션으로 검색…', comingMembers:'그 밖의 부원들', profileSoon:'프로필 준비 중', emptySearch:'검색 결과가 없습니다.',
     scheduleTitle:'활동 일정', scheduleLead:'훈련도 시합도, 하루씩 차곡차곡.', mon:'월', tue:'화', wed:'수', thu:'목', fri:'금', sat:'토', sun:'일',
-    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.',
+    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', birthdayLegend:'부원 생일', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.',
     guideTitle:'세이레이 소개', guideLead:'이 이야기의 무대와 코트 너머의 풍경.', guideSchoolTitle:'학교 소개', guideSchoolBody:'사이타마현에 있는 가상의 현립 고등학교. 이야기의 무대가 되는 학교입니다.',
     guideClubTitle:'배구부', guideClubBody:'선수들과 매니저가 훈련과 학교생활을 함께하며 하루하루를 쌓아 갑니다.',
     guideRelationTitle:'등장인물 관계', guideRelationBody:'프로필과 관계는 설정이 확정되는 대로 차례차례 추가합니다.',
@@ -57,7 +57,7 @@ const translations = {
     koutaPosition:'아웃사이드 히터', harutoPosition:'리베로', koutaNote:'밝은 성격으로 팀 분위기를 움직이는 존재.',
     koutaProfileNote:'고등학교 시절 설정을 바탕으로 한 프로필입니다. 학년·신장·생일 등은 확정된 설정에 맞춰 추가할 수 있습니다.',
     harutoProfileNote:'차분한 수비로 팀을 뒷받침하는 리베로.', prevMonth:'이전 달', nextMonth:'다음 달', abilitiesTitle:'PLAYER ABILITIES', abilitiesScale:'능력치 · 1–10', abilityAttack:'공격력', abilityDefense:'수비력', abilityServe:'서브', abilityReceive:'리시브', abilityBlock:'블로킹', abilitySpeed:'스피드',
-    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.',
+    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', birthdayLegend:'부원 생일', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.',
     eventSemester:'신학기 시작 · 입학식', eventClasses:'정상 수업 시작', eventRecruit:'신입 부원 모집', eventResume:'수업 재개', eventMidterm:'1학기 중간고사', eventNishigo:'니시고와 연습 경기', eventCamp:'단기 합숙', eventInterhigh:'인터하이 사이타마현 예선', eventSports:'체육대회 (학급 대항전)', eventFinal:'1학기 기말고사', eventClosing:'1학기 종업식', eventSummer:'여름방학 시작', eventGoldenStart:'골든위크 시작', eventGoldenEnd:'골든위크 마지막 날'
   }
 };
@@ -338,7 +338,18 @@ const events = {
   '2020-03-19': [{labelKey:'eventThirdClosing', type:'academic'}],
   '2020-03-20': [{labelKey:'eventSpringBreak', type:'academic'}]
 };
-const activeFilters = {academic:true, club:true, holiday:true};
+// Recurring birthdays are kept separate from dated school/club events.
+// They are generated for every displayed year, so future calendar years need no re-entry.
+const recurringBirthdays = [
+  {month:4, day:15, ja:'白川 春樹 誕生日', ko:'하루키 생일'},
+  {month:8, day:1, ja:'赤城 太陽 誕生日', ko:'타이요 생일'},
+  {month:10, day:31, ja:'篠原 晶 誕生日', ko:'아키 생일'},
+  {month:11, day:22, ja:'藤崎 律 誕生日', ko:'리츠 생일'},
+  {month:12, day:12, ja:'水野 陽翔 誕生日', ko:'하루토 생일'},
+  {month:12, day:15, ja:'高橋 康太 誕生日', ko:'코우타 생일'},
+  {month:2, day:18, ja:'石田 拓也 誕生日', ko:'타쿠야 생일'}
+];
+const activeFilters = {academic:true, club:true, holiday:true, birthday:true};
 const dateRanges = [
   {start:'2019-04-27', end:'2019-05-06', type:'holiday'},
   {start:'2019-05-13', end:'2019-05-15', type:'academic'},
@@ -389,7 +400,9 @@ function renderCalendar() {
     if (!current) cell.classList.add('muted');
     const rangeType = rangeTypeFor(dateKey);
     const num = document.createElement('span'); num.className = 'day-num'; num.textContent = day; cell.appendChild(num);
-    const dayEvents = events[dateKey] || [];
+    const dayEvents = [...(events[dateKey] || [])];
+    const birthday = recurringBirthdays.find(item => item.month === displayedMonth + 1 && item.day === day);
+    if (current && birthday) dayEvents.push({type:'birthday', label: currentLanguage === 'ja' ? birthday.ja : birthday.ko});
     // Keep multi-day bars inside the displayed month; adjacent-month cells stay visually clean.
     if (current && rangeType && activeFilters[rangeType]) {
       const rangeEvent = dayEvents.find(eventData => eventData.type === rangeType);
@@ -407,7 +420,7 @@ function renderCalendar() {
       if (!activeFilters[eventData.type] || (eventData.range && rangeType === eventData.type)) return;
       const event = document.createElement('span');
       event.className = `day-event ${eventData.type}`;
-      event.textContent = t[eventData.labelKey];
+      event.textContent = eventData.label || t[eventData.labelKey];
       cell.appendChild(event);
     });
     calendarGrid.appendChild(cell);

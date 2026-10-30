@@ -312,13 +312,14 @@
 .legend-filter{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;background:transparent;padding:5px 7px;color:#69788b;font:inherit;font-size:11px;cursor:pointer;opacity:.48;border-radius:4px}
 .legend-filter.active{opacity:1;border-color:#e4eaf1;background:#fff}
 .legend-filter:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-.dot.academic{background:#9bb6dc}.dot.club{background:#e6aab7}.dot.holiday{background:#e6c85f}
+.dot.academic{background:#9bb6dc}.dot.club{background:#e6aab7}.dot.holiday{background:#e6c85f}.dot.birthday{background:#c9b4e8}
 .day-cell{background:#fff}
 .day-cell.muted{background:#fafbfd}
 .day-cell.today{background:#fff}
 .day-event.academic{background:#dce8f8;color:#496b98}
 .day-event.club{background:#f8dfe4;color:#a65f72}
 .day-event.holiday{background:#f9edb9;color:#8b742b}
+.day-event.birthday{background:#eee5fa;color:#8064a6}
 .day-event.range-mark{font-weight:700}
 .day-event.range-segment{min-height:17px;box-sizing:border-box;margin-left:-8px;margin-right:-8px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .day-event.range-segment:not(.range-mark){padding-top:0;padding-bottom:0}
