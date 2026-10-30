@@ -112,8 +112,8 @@
           <p data-i18n="aboutBody">埼玉県立青嶺高等学校の男子バレーボール部。コートの中では真剣に、コートの外では自分たちらしく。選手とマネージャー、それぞれの立場からチームを支えています。</p>
         </div>
         <div class="facts">
-          <div class="fact"><span data-i18n="factPlace">活動場所</span><strong data-i18n="factPlaceValue">体育館</strong></div>
-          <div class="fact"><span data-i18n="factActivities">活動内容</span><strong data-i18n="factActivitiesValue">練習・練習試合・公式戦</strong></div>
+          <div class="fact"><span data-i18n="factPlace">活動場所</span><strong data-i18n="factPlaceValue">第一体育館</strong></div>
+          <div class="fact"><span data-i18n="factActivities">活動内容</span><strong data-i18n="factActivitiesValue">練習・練習試合</strong></div>
           <div class="fact"><span data-i18n="factValues">大切にしていること</span><strong data-i18n="factValuesValue">声をつなぐこと、仲間を信じること</strong></div>
           <p class="small-note" data-i18n="fictionNote">※このページは創作世界「青嶺高校」の設定紹介サイトです。</p>
         </div>
@@ -243,11 +243,15 @@
         <p class="section-lead" data-i18n="scheduleLead">練習も試合も、一日ずつ積み重ねて。</p>
       </div>
       <div class="schedule-box">
-        <div class="schedule-top"><div><span class="eyebrow">CLUB CALENDAR</span><h3 id="monthTitle">2026年 10月</h3></div><div class="month-controls"><button id="prevMonth" aria-label="前の月">←</button><button id="nextMonth" aria-label="次の月">→</button></div></div>
+        <div class="schedule-top"><div><span class="eyebrow">CLUB CALENDAR</span><h3 id="monthTitle">2019年 4月</h3></div><div class="month-controls"><button id="prevMonth" aria-label="前の月">←</button><button id="nextMonth" aria-label="次の月">→</button></div></div>
         <div class="calendar-week"><span data-i18n="mon">月</span><span data-i18n="tue">火</span><span data-i18n="wed">水</span><span data-i18n="thu">木</span><span data-i18n="fri">金</span><span data-i18n="sat">土</span><span data-i18n="sun">日</span></div>
         <div class="calendar-grid" id="calendarGrid"></div>
-        <div class="schedule-legend"><span><i class="dot practice"></i><span data-i18n="practiceLegend">通常練習（仮）</span></span><span><i class="dot game"></i><span data-i18n="gameLegend">試合予定（仮）</span></span></div>
-        <p class="small-note" data-i18n="scheduleNote">予定は動作確認用のサンプルです。正式な日程が決まったら編集できます。</p>
+        <div class="schedule-legend" role="group" aria-label="予定の種類">
+          <button class="legend-filter active" type="button" data-filter="academic" aria-pressed="true"><i class="dot academic"></i><span data-i18n="academicLegend">学事日程</span></button>
+          <button class="legend-filter active" type="button" data-filter="club" aria-pressed="true"><i class="dot club"></i><span data-i18n="clubLegend">部活動予定</span></button>
+          <button class="legend-filter active" type="button" data-filter="holiday" aria-pressed="true"><i class="dot holiday"></i><span data-i18n="holidayLegend">祝日・特別休暇</span></button>
+        </div>
+        <p class="small-note" data-i18n="scheduleNote">2019年度の学事日程とバレーボール部の予定です。</p>
       </div>
     </section>
 

@@ -305,3 +305,21 @@
 @media(prefers-reduced-motion:reduce){
   .music-player,.music-player-label,.music-track,.music-toggle,.music-control{transition:none!important}
 }
+
+
+/* 2019 Seirei calendar: academic, club and special-holiday categories */
+.schedule-legend{align-items:center;gap:10px 18px;flex-wrap:wrap}
+.legend-filter{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;background:transparent;padding:5px 7px;color:#69788b;font:inherit;font-size:11px;cursor:pointer;opacity:.48;border-radius:4px}
+.legend-filter.active{opacity:1;border-color:#e4eaf1;background:#fff}
+.legend-filter:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.dot.academic{background:#9bb6dc}.dot.club{background:#e6aab7}.dot.holiday{background:#e6c85f}
+.day-cell{background:#fff}
+.day-cell.muted{background:#fafbfd}
+.day-cell.today{background:#fff}
+.day-event.academic{background:#dce8f8;color:#496b98}
+.day-event.club{background:#f8dfe4;color:#a65f72}
+.day-event.holiday{background:#f9edb9;color:#8b742b}
+.day-event.range-mark{font-weight:700}
+.day-event.range-segment{min-height:17px;box-sizing:border-box;margin-left:-8px;margin-right:-8px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.day-event.range-segment:not(.range-mark){padding-top:0;padding-bottom:0}
+@media(max-width:760px){.legend-filter{font-size:10px;padding:4px 5px}.schedule-legend{gap:6px 9px}.day-event.range-segment{margin-left:-3px;margin-right:-3px;padding-left:3px;padding-right:3px}}
