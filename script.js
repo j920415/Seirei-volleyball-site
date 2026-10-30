@@ -348,14 +348,20 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!intro || !enter || !music || !player || !trackSelect || !toggle || !prev || !next) return;
 
   const tracks = [
-    { id: 'summer-court', title: 'Summer Court Rhythm', src: 'audio/Summer-Court-Rhythm.mp3' },
-    { id: 'summer-rally', title: 'Summer Rally', src: 'audio/Summer-Rally.mp3' },
-    { id: 'spring-match', title: '春の試合前', src: 'audio/春の試合前.mp3' },
-    { id: 'autumn-court', title: '秋のコート', src: 'audio/Autumn-Court.mp3' },
-    { id: 'autumn-afterglow', title: 'Autumn Afterglow', src: 'audio/Autumn-Afterglow.mp3' },
-    { id: 'snowlight-memories', title: 'Snowlight Memories', src: 'audio/Snowlight-Memories.mp3' },
-    { id: 'snowy-afternoon-classroom', title: '雪降る午後の教室', src: 'audio/Snowy-Afternoon-Classroom.mp3' }
+    { id: 'summer-court', title: 'Summer Court Rhythm', src: 'audio/Summer-Court-Rhythm.mp3', season: 'summer' },
+    { id: 'summer-rally', title: 'Summer Rally', src: 'audio/Summer-Rally.mp3', season: 'summer' },
+    { id: 'spring-match', title: '春の試合前', src: 'audio/春の試合前.mp3', season: 'spring' },
+    { id: 'sakura-time', title: '桜の時間', src: 'audio/桜の時間.mp3', season: 'spring' },
+    { id: 'autumn-court', title: '秋のコート', src: 'audio/Autumn-Court.mp3', season: 'autumn' },
+    { id: 'autumn-afterglow', title: 'Autumn Afterglow', src: 'audio/Autumn-Afterglow.mp3', season: 'autumn' },
+    { id: 'snowlight-memories', title: 'Snowlight Memories', src: 'audio/Snowlight-Memories.mp3', season: 'winter' },
+    { id: 'snowy-afternoon-classroom', title: '雪降る午後の教室', src: 'audio/Snowy-Afternoon-Classroom.mp3', season: 'winter' }
   ];
+
+  function applySeasonTheme(season) {
+    player.dataset.season = season;
+    player.setAttribute('aria-label', `Seirei original soundtrack player - ${season}`);
+  }
   let currentIndex = 0;
   let entered = false;
 
@@ -369,6 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = (index + tracks.length) % tracks.length;
     const track = tracks[currentIndex];
     trackSelect.value = track.id;
+    applySeasonTheme(track.season);
     music.src = track.src;
     music.load();
     if (autoplay) {

@@ -230,3 +230,78 @@
 .music-toggle:focus-visible,.music-control:focus-visible,.music-track:focus-visible{outline:2px solid #8fb8e8;outline-offset:3px}
 @media(max-width:600px){.intro-backdrop{background-position:center}.intro-copy{padding-inline:12px}.intro-tagline{margin:22px 0 26px}.intro-enter{min-width:190px;padding:15px 18px}.music-player{right:10px;bottom:10px;width:min(280px,calc(100vw - 20px))}}
 @media(prefers-reduced-motion:reduce){.intro-door,.intro-enter,.intro-copy,.intro-hint{transition-duration:.01ms!important}}
+
+/* Four Seasons OST player skins: keep the existing layout, change the palette only. */
+.music-player{
+  --season-bg:#edf6ff;
+  --season-accent:#80acd6;
+  --season-border:#c5e3ff;
+  --season-text:#24446f;
+  --season-surface:rgba(255,255,255,.68);
+  --season-surface-hover:rgba(255,255,255,.88);
+  --season-shadow:rgba(36,68,111,.14);
+  background-color:var(--season-bg);
+  border-color:var(--season-border);
+  color:var(--season-text);
+  box-shadow:0 8px 28px rgba(15,35,60,.16),0 0 20px var(--season-shadow);
+  transition:background-color .55s ease,border-color .55s ease,color .55s ease,box-shadow .55s ease;
+}
+.music-player[data-season="spring"]{
+  --season-bg:#fff0f1;
+  --season-accent:#d9828b;
+  --season-border:#ffc3c4;
+  --season-text:#65434b;
+  --season-surface:rgba(255,255,255,.68);
+  --season-surface-hover:rgba(255,255,255,.92);
+  --season-shadow:rgba(217,130,139,.18);
+}
+.music-player[data-season="summer"]{
+  --season-bg:#edf6ff;
+  --season-accent:#5f91c2;
+  --season-border:#c5e3ff;
+  --season-text:#24446f;
+  --season-surface:rgba(255,255,255,.68);
+  --season-surface-hover:rgba(255,255,255,.92);
+  --season-shadow:rgba(110,160,207,.18);
+}
+.music-player[data-season="autumn"]{
+  --season-bg:#fff5e8;
+  --season-accent:#ae7840;
+  --season-border:#e9bd86;
+  --season-text:#654b32;
+  --season-surface:rgba(255,255,255,.62);
+  --season-surface-hover:rgba(255,255,255,.9);
+  --season-shadow:rgba(174,120,64,.17);
+}
+.music-player[data-season="winter"]{
+  --season-bg:#f1f8fc;
+  --season-accent:#6f9db8;
+  --season-border:#dcecf7;
+  --season-text:#34556c;
+  --season-surface:rgba(255,255,255,.72);
+  --season-surface-hover:rgba(255,255,255,.94);
+  --season-shadow:rgba(111,157,184,.17);
+}
+.music-player-label{color:var(--season-accent);transition:color .55s ease}
+.music-track{
+  background-color:var(--season-surface);
+  border-color:color-mix(in srgb,var(--season-accent) 34%,white);
+  color:var(--season-text);
+  transition:background-color .55s ease,border-color .55s ease,color .55s ease;
+}
+.music-track option{background:#fff;color:#24446f}
+.music-toggle,.music-control{
+  border-color:color-mix(in srgb,var(--season-accent) 55%,white);
+  background:var(--season-surface);
+  color:var(--season-text);
+  transition:background-color .55s ease,border-color .55s ease,color .55s ease;
+}
+.music-toggle{background:color-mix(in srgb,var(--season-accent) 16%,white);font-weight:800}
+.music-toggle:hover,.music-control:hover{background:var(--season-surface-hover)}
+.music-toggle:focus-visible,.music-control:focus-visible,.music-track:focus-visible{
+  outline:2px solid var(--season-accent);
+  outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce){
+  .music-player,.music-player-label,.music-track,.music-toggle,.music-control{transition:none!important}
+}
