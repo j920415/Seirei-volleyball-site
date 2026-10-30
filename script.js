@@ -62,13 +62,13 @@ const translations = {
 let currentLanguage = 'ja';
 
 const members = {
-  ritsu: { name:'藤崎 律', roman:'FUJISAKI RITSU', roleKey:'ritsuRole', rows:[['jerseyValue','jersey1'],['dutyValue','captainDuty'],['position','roleSetter'],['gradeValue','grade3'],['heightValue','height178'],['birthdayValue','birthday1122']], noteKey:'ritsuNote', searchTerms:'藤崎 律 ふじさき りつ 후지사키 리츠 setter 세터 주장 captain 3年 178 1999年11月22日' },
-  takuya: { name:'石田 拓也', roman:'ISHIDA TAKUYA', roleKey:'takuyaRole', rows:[['jerseyValue','jersey2'],['dutyValue','viceCaptainDuty'],['position','roleOpposite'],['gradeValue','grade3'],['heightValue','height188'],['birthdayValue','birthday0218']], noteKey:'takuyaNote', searchTerms:'石田 拓也 いしだ たくや 이시다 타쿠야 opposite 아포짓 부주장 vice captain 3年 188 1999年2月18日' },
-  kouta: { name:'高橋 康太', roman:'TAKAHASHI KOUTA', roleKey:'koutaRole', rows:[['jerseyValue','jersey3'],['position','koutaPosition'],['gradeValue','grade3'],['heightValue','height187'],['birthdayValue','birthday1215']], noteKey:'koutaNote', searchTerms:'高橋 康太 たかはし こうた 타카하시 코우타 아웃사이드 히터 アウトサイドヒッター OH 3年 187 1999年12月15日' },
-  haruki: { name:'白川 春樹', roman:'SHIRAKAWA HARUKI', roleKey:'harukiRole', rows:[['jerseyValue','jersey5'],['position','roleOpposite'],['gradeValue','grade3'],['heightValue','height190'],['birthdayValue','birthday0415']], noteKey:'harukiNote', searchTerms:'白川 春樹 しらかわ はるき 시라카와 하루키 opposite 아포짓 3年 190 1999年4月15日' },
-  haruto: { name:'水野 陽翔', roman:'MIZUNO HARUTO', roleKey:'harutoRole', rows:[['jerseyValue','jersey6'],['position','harutoPosition'],['gradeValue','grade3'],['heightValue','height168'],['birthdayValue','birthday1212']], noteKey:'harutoNote', searchTerms:'水野 陽翔 みずの はると 미즈노 하루토 libero 리베로 3年 168 1999年12月12日' },
-  taiyou: { name:'赤城 太陽', roman:'AKAGI TAIYOU', roleKey:'taiyouRole', rows:[['jerseyValue','jersey7'],['position','roleMiddle'],['gradeValue','grade2'],['heightValue','height184'],['birthdayValue','birthday0801']], noteKey:'taiyouNote', searchTerms:'赤城 太陽 あかぎ たいよう 아카기 타이요 middle blocker 미들 블로커 2年 184 2000年8月1日' },
-  aki: { name:'篠原 晶', roman:'SHINOHARA AKI', roleKey:'akiRole', rows:[['jerseyValue','jersey8'],['position','roleMiddle'],['gradeValue','grade2'],['heightValue','height188'],['birthdayValue','birthday1031']], noteKey:'akiNote', searchTerms:'篠原 晶 しのはら あき 시노하라 아키 middle blocker 미들 블로커 2年 188 2000年10月31日' }
+  ritsu: { name:'藤崎 律', roman:'FUJISAKI RITSU', roleKey:'ritsuRole', rows:[['jerseyValue','jersey1'],['dutyValue','captainDuty'],['position','roleSetter'],['gradeValue','class3_1'],['heightValue','height178'],['birthdayValue','birthday1122']], noteKey:'ritsuNote', searchTerms:'藤崎 律 ふじさき りつ 후지사키 리츠 setter 세터 주장 captain 3年 178 1999年11月22日' },
+  takuya: { name:'石田 拓也', roman:'ISHIDA TAKUYA', roleKey:'takuyaRole', rows:[['jerseyValue','jersey2'],['dutyValue','viceCaptainDuty'],['position','roleOpposite'],['gradeValue','class3_3'],['heightValue','height188'],['birthdayValue','birthday0218']], noteKey:'takuyaNote', searchTerms:'石田 拓也 いしだ たくや 이시다 타쿠야 opposite 아포짓 부주장 vice captain 3年 188 1999年2月18日' },
+  kouta: { name:'高橋 康太', roman:'TAKAHASHI KOUTA', roleKey:'koutaRole', rows:[['jerseyValue','jersey3'],['position','koutaPosition'],['gradeValue','class3_4'],['heightValue','height187'],['birthdayValue','birthday1215']], noteKey:'koutaNote', searchTerms:'高橋 康太 たかはし こうた 타카하시 코우타 아웃사이드 히터 アウトサイドヒッター OH 3年 187 1999年12月15日' },
+  haruki: { name:'白川 春樹', roman:'SHIRAKAWA HARUKI', roleKey:'harukiRole', rows:[['jerseyValue','jersey5'],['position','roleOpposite'],['gradeValue','class3_5'],['heightValue','height190'],['birthdayValue','birthday0415']], noteKey:'harukiNote', searchTerms:'白川 春樹 しらかわ はるき 시라카와 하루키 opposite 아포짓 3年 190 1999年4月15日' },
+  haruto: { name:'水野 陽翔', roman:'MIZUNO HARUTO', roleKey:'harutoRole', rows:[['jerseyValue','jersey6'],['position','harutoPosition'],['gradeValue','class3_4'],['heightValue','height168'],['birthdayValue','birthday1212']], noteKey:'harutoNote', searchTerms:'水野 陽翔 みずの はると 미즈노 하루토 libero 리베로 3年 168 1999年12月12日' },
+  taiyou: { name:'赤城 太陽', roman:'AKAGI TAIYOU', roleKey:'taiyouRole', rows:[['jerseyValue','jersey7'],['position','roleMiddle'],['gradeValue','class2_4'],['heightValue','height184'],['birthdayValue','birthday0801']], noteKey:'taiyouNote', searchTerms:'赤城 太陽 あかぎ たいよう 아카기 타이요 middle blocker 미들 블로커 2年 184 2000年8月1日' },
+  aki: { name:'篠原 晶', roman:'SHINOHARA AKI', roleKey:'akiRole', rows:[['jerseyValue','jersey8'],['position','roleMiddle'],['gradeValue','class2_4'],['heightValue','height188'],['birthdayValue','birthday1031']], noteKey:'akiNote', searchTerms:'篠原 晶 しのはら あき 시노하라 아키 middle blocker 미들 블로커 2年 188 2000年10月31日' }
 };
 
 // Shared 1–10 ability ratings for the Seirei roster.
@@ -111,6 +111,12 @@ Object.assign(translations.ko, {
 
 translations.ja.grade3 = '3年生'; translations.ko.grade3 = '3학년';
 translations.ja.grade2 = '2年生'; translations.ko.grade2 = '2학년';
+
+translations.ja.class3_1 = '3年1組'; translations.ko.class3_1 = '3학년 1반';
+translations.ja.class3_3 = '3年3組'; translations.ko.class3_3 = '3학년 3반';
+translations.ja.class3_4 = '3年4組'; translations.ko.class3_4 = '3학년 4반';
+translations.ja.class3_5 = '3年5組'; translations.ko.class3_5 = '3학년 5반';
+translations.ja.class2_4 = '2年4組'; translations.ko.class2_4 = '2학년 4반';
 translations.ja.height168 = '168 cm'; translations.ko.height168 = '168 cm';
 translations.ja.gradeValue = '学年'; translations.ko.gradeValue = '학년';
 translations.ja.heightValue = '身長'; translations.ko.heightValue = '신장';
