@@ -11,7 +11,8 @@ mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () 
 
 const translations = {
   ja: {
-    schoolNameShort:'埼玉県立青嶺高等学校', navAbout:'部について', navMembers:'部員紹介', navSchedule:'活動予定', navGuide:'学校・世界観',
+    schoolNameShort:'埼玉県立青嶺高等学校', navAbout:'部について', navMembers:'部員紹介', navSchedule:'活動予定', navTownMap:'街の地図', navGuide:'学校・世界観',
+    townMapEyebrow:'SEIREI TOWN', townMapTitle:'街の案内', townMapHint:'マーカーにカーソルを合わせるか、タップしてください。', townHomeLabel:'HOME', townMapFootnote:'住宅マーカーの位置は物語上の仮設定です。', houseTypeDetached:'一戸建て', houseTypeApartment:'マンション・アパート',
     contentsLabel:'コンテンツ', heroCopy1:'仲間と声を重ね、最後の一球まであきらめない。', heroCopy2:'青嶺高校バレーボール部のページへようこそ。', heroButton:'部員紹介を見る',
     aboutTitle:'青嶺高校バレーボール部', aboutLead1:'勝つことだけじゃない。', aboutLead2:'ここで過ごす時間も、僕らの青春だ。',
     aboutBody:'異なる個性を持つ部員たちが、一つのチームとなってボールをつないでいきます。コートの中では一つの点に真剣に向き合い、コートの外では仲間と共に青嶺らしい学校生活を送っています。',
@@ -39,7 +40,8 @@ const translations = {
     eventSemester:'新学期開始・入学式', eventClasses:'授業開始', eventRecruit:'新入部員募集', eventResume:'授業再開', eventMidterm:'1学期中間試験', eventNishigo:'西高との練習試合', eventCamp:'短期合宿', eventInterhigh:'インターハイ埼玉県予選', eventSports:'体育祭（クラス対抗）', eventFinal:'1学期期末試験', eventClosing:'1学期終業式', eventSummer:'夏休み開始', eventGoldenStart:'ゴールデンウィーク開始', eventGoldenEnd:'ゴールデンウィーク最終日'
   },
   ko: {
-    schoolNameShort:'사이타마현립 세이레이 고등학교', navAbout:'부 소개', navMembers:'선수 소개', navSchedule:'활동 일정', navGuide:'학교·세계관',
+    schoolNameShort:'사이타마현립 세이레이 고등학교', navAbout:'부 소개', navMembers:'선수 소개', navSchedule:'활동 일정', navTownMap:'마을 지도', navGuide:'학교·세계관',
+    townMapEyebrow:'SEIREI TOWN', townMapTitle:'세이레이 마을 안내', townMapHint:'마커에 마우스를 올리거나 눌러보세요.', townHomeLabel:'HOME', townMapFootnote:'집 마커의 위치는 이야기 속 임시 설정입니다.', houseTypeDetached:'단독주택', houseTypeApartment:'맨션·아파트',
     contentsLabel:'콘텐츠', heroCopy1:'동료와 목소리를 잇고, 마지막 한 공까지 포기하지 않는다.', heroCopy2:'세이레이 고등학교 배구부 홈페이지에 오신 것을 환영합니다.', heroButton:'선수 소개 보기',
     aboutTitle:'세이레이 고등학교 배구부', aboutLead1:'승리만이 전부는 아니다.', aboutLead2:'이곳에서 보내는 시간도 우리의 청춘이다.',
     aboutBody:'서로 다른 개성을 가진 부원들이 하나의 팀으로 모여 함께 공을 이어 나갑니다. 코트 안에서는 한 점을 위해 진지하게, 코트 밖에서는 동료들과 함께 세이레이만의 학교생활을 만들어 갑니다.',
@@ -172,6 +174,7 @@ function setLanguage(language, save = true) {
   if (next) next.setAttribute('aria-label', t.nextMonth);
   renderCalendar();
   if (dialog.open && dialog.dataset.memberKey) renderMemberDialog(dialog.dataset.memberKey);
+  refreshTownHomePopup();
   if (save) {
     try { localStorage.setItem('seirei-language', currentLanguage); } catch (_) {}
   }
@@ -547,3 +550,98 @@ document.addEventListener('DOMContentLoaded', () => {
   next.addEventListener('click', () => chooseTrack(currentIndex + 1, true));
   music.addEventListener('ended', () => chooseTrack(currentIndex + 1, true));
 })();
+
+
+// Seirei Town Map: independent pastel home-marker layer.
+const townMapFrame = document.getElementById('townMapFrame');
+const townHomeMarkers = document.getElementById('townHomeMarkers');
+const townHomePopup = document.getElementById('townHomePopup');
+const townPopupName = document.getElementById('townPopupName');
+const townPopupDescription = document.getElementById('townPopupDescription');
+const townPopupKicker = document.getElementById('townPopupKicker');
+const townPopupClose = document.getElementById('townPopupClose');
+
+Object.assign(translations.ja, {
+  townLegendHome:'登場人物の家', townLegendStation:'駅', townLegendPark:'公園', townLegendShrine:'神社',
+  townSpotStation:'駅', townSpotPark:'公園', townSpotShrine:'神社',
+  townStationDetail:'大宮公園駅。街の西側にある、通学や買い物の起点。',
+  townParkDetail:'大宮公園。池や緑に囲まれた、街の大きな憩いの場所。',
+  townShrineDetail:'街の東側にある神社。木々に囲まれた静かな境内。',
+  townMapFootnote:'住宅マーカーは物語上の位置です。実際の住所を示すものではありません。'
+});
+Object.assign(translations.ko, {
+  townLegendHome:'등장인물의 집', townLegendStation:'역', townLegendPark:'공원', townLegendShrine:'신사',
+  townSpotStation:'역', townSpotPark:'공원', townSpotShrine:'신사',
+  townStationDetail:'오미야코엔역. 마을 서쪽에 있는 통학과 외출의 출발점.',
+  townParkDetail:'오미야 공원. 연못과 푸른 나무가 어우러진 마을의 큰 쉼터.',
+  townShrineDetail:'마을 동쪽의 신사. 나무들에 둘러싸인 조용한 경내.',
+  townMapFootnote:'집 마커는 이야기 속의 위치이며 실제 주소를 나타내지 않습니다.'
+});
+
+// The positions are placed on visible building clusters in the illustration,
+// not on roads, the pond, or park lawns. They are fictional story locations.
+const townHomes = [
+  { id:'ritsu', name:'藤崎 律', ko:'후지사키 리츠', x:73, y:16, type:'detached' },
+  { id:'takuya', name:'石田 拓也', ko:'이시다 타쿠야', x:82, y:48, type:'detached' },
+  { id:'kouta', name:'高橋 康太', ko:'타카하시 코우타', x:8, y:57, type:'apartment' },
+  { id:'haruki', name:'白川 春樹', ko:'시라카와 하루키', x:35, y:48, type:'detached' },
+  { id:'haruto', name:'水野 陽翔', ko:'미즈노 하루토', x:61, y:51, type:'detached' },
+  { id:'taiyou', name:'赤城 太陽', ko:'아카기 타이요', x:10, y:34, type:'apartment' },
+  { id:'aki', name:'篠原 晶', ko:'시노하라 아키', x:78, y:78, type:'apartment' }
+];
+
+// Major neighborhood landmarks are separate from character residences.
+const townSpots = [
+  { id:'station', kind:'station', icon:'🚉', x:15, y:48, name:'大宮公園駅', ko:'오미야코엔역', detailKey:'townStationDetail' },
+  { id:'park', kind:'park', icon:'🌳', x:45, y:72, name:'大宮公園', ko:'오미야 공원', detailKey:'townParkDetail' },
+  { id:'shrine', kind:'shrine', icon:'⛩️', x:92, y:36, name:'神社', ko:'신사', detailKey:'townShrineDetail' }
+];
+let selectedTownHome = null;
+
+function refreshTownHomePopup() {
+  if (!townHomePopup || !selectedTownHome) return;
+  const t = translations[currentLanguage];
+  const item = selectedTownHome;
+  townPopupName.textContent = currentLanguage === 'ko' ? item.ko : item.name;
+  if (townPopupDescription) townPopupDescription.textContent = item.detailKey ? t[item.detailKey] : '';
+  if (townPopupKicker) {
+    townPopupKicker.textContent = item.kind
+      ? t[item.kind === 'station' ? 'townSpotStation' : item.kind === 'park' ? 'townSpotPark' : 'townSpotShrine']
+      : t.townHomeLabel;
+  }
+}
+function closeTownHomePopup() {
+  if (townHomePopup) townHomePopup.hidden = true;
+  selectedTownHome = null;
+  townHomeMarkers?.querySelectorAll('.town-map-marker').forEach(el => el.classList.remove('is-selected'));
+}
+function showTownHome(item, button) {
+  if (!townHomePopup || !townPopupName) return;
+  townHomeMarkers.querySelectorAll('.town-map-marker').forEach(el => el.classList.remove('is-selected'));
+  button.classList.add('is-selected');
+  selectedTownHome = item;
+  refreshTownHomePopup();
+  townHomePopup.hidden = false;
+}
+function addTownMarker(item) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = `town-map-marker ${item.kind ? `town-marker-${item.kind}` : 'town-marker-home'}`;
+  button.style.left = `${item.x}%`;
+  button.style.top = `${item.y}%`;
+  button.dataset.markerId = item.id;
+  button.textContent = item.icon || '⌂';
+  const label = currentLanguage === 'ko' ? item.ko : item.name;
+  button.setAttribute('aria-label', label);
+  button.title = label;
+  button.addEventListener('mouseenter', () => showTownHome(item, button));
+  button.addEventListener('focus', () => showTownHome(item, button));
+  button.addEventListener('click', () => showTownHome(item, button));
+  townHomeMarkers.appendChild(button);
+}
+if (townMapFrame && townHomeMarkers) {
+  townSpots.forEach(addTownMarker);
+  townHomes.forEach(home => addTownMarker({ ...home, icon:'🏠' }));
+}
+townPopupClose?.addEventListener('click', closeTownHomePopup);
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeTownHomePopup(); });

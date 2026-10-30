@@ -324,3 +324,116 @@
 .day-event.range-segment{min-height:17px;box-sizing:border-box;margin-left:-8px;margin-right:-8px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .day-event.range-segment:not(.range-mark){padding-top:0;padding-bottom:0}
 @media(max-width:760px){.legend-filter{font-size:10px;padding:4px 5px}.schedule-legend{gap:6px 9px}.day-event.range-segment{margin-left:-3px;margin-right:-3px;padding-left:3px;padding-right:3px}}
+
+
+/* Standalone Seirei Town Map section */
+.town-map-section{background:#f7f9fc;border-block:1px solid #e8edf4}
+.town-map-section .section{padding-top:78px;padding-bottom:82px}
+.town-map-frame{position:relative;overflow:hidden;border:1px solid #e4e9ef;border-radius:10px;background:#f4f0e7;box-shadow:0 12px 32px rgba(35,60,90,.10);line-height:0}
+.town-map-image{display:block;width:100%;height:auto}
+.town-home-markers{position:absolute;inset:0;pointer-events:none}
+.town-home-marker{pointer-events:auto;position:absolute;width:17px;height:17px;padding:0;border:2px solid rgba(255,255,255,.98);border-radius:50%;background:#a9cde9;box-shadow:0 1px 6px rgba(51,83,119,.38);transform:translate(-50%,-50%);cursor:pointer;transition:transform .16s ease,box-shadow .16s ease}
+.town-home-marker:nth-child(3n+2){background:#edc1cb}.town-home-marker:nth-child(3n){background:#b9d8b6}
+.town-home-marker:hover,.town-home-marker:focus-visible,.town-home-marker.is-selected{z-index:2;transform:translate(-50%,-50%) scale(1.5);box-shadow:0 0 0 5px rgba(255,255,255,.62),0 3px 10px rgba(35,60,90,.25)}
+.town-home-marker:focus-visible{outline:2px solid #547da8;outline-offset:4px}
+.town-home-popup{position:relative;margin:16px auto 0;width:min(360px,100%);padding:16px 44px 15px 18px;border:1px solid #e4eaf1;border-radius:9px;background:#fff;color:#34465d;box-shadow:0 5px 18px rgba(35,60,90,.08);line-height:1.5}
+.town-home-popup[hidden]{display:none}.town-popup-kicker{display:block;color:#8da8c4;font-size:9px;font-weight:800;letter-spacing:.16em}
+.town-home-popup strong{display:block;margin-top:3px;font-size:15px;color:#314b6d}.town-popup-residence{display:block;margin-top:2px;color:#8794a4;font-size:10px}
+.town-popup-close{position:absolute;right:10px;top:9px;width:28px;height:28px;border:0;border-radius:50%;background:#f1f5f9;color:#60758d;font-size:19px;cursor:pointer}
+.town-map-footnote{margin:12px 0 0;color:#8a98aa;font-size:10px}
+@media(max-width:760px){.town-map-section .section{padding-top:58px;padding-bottom:62px}.town-home-marker{width:19px;height:19px}.town-home-popup{margin-top:11px}}
+
+
+/* Town map marker refresh: high-contrast, readable pins */
+.town-home-markers{z-index:3}
+.town-map-marker{
+  pointer-events:auto;position:absolute;display:grid;place-items:center;
+  transform:translate(-50%,-50%);cursor:pointer;z-index:1;
+  font-family:'Noto Sans JP',sans-serif;font-weight:900;line-height:1;
+  border:2px solid #fff;box-shadow:0 2px 9px rgba(25,42,62,.42),0 0 0 1px rgba(35,55,80,.25);
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+.town-marker-home{
+  width:34px;height:34px;border-radius:50%;font-size:21px;
+  color:#263f5d;background:#ffe7a8;
+  text-shadow:0 1px 0 rgba(255,255,255,.8);
+}
+.town-marker-home:nth-of-type(3n){background:#d8edff}
+.town-marker-home:nth-of-type(3n+1){background:#f8dce5}
+.town-marker-home:nth-of-type(3n+2){background:#dcefd8}
+.town-marker-station,.town-marker-park,.town-marker-shrine,.town-marker-school{
+  min-width:42px;height:42px;padding:0 7px;border-radius:14px;
+  font-size:18px;color:#fff;background:#244b78;border:2px solid #fff;
+  box-shadow:0 3px 12px rgba(20,35,55,.5),0 0 0 2px rgba(255,255,255,.8);
+}
+.town-marker-station{background:#285f91}
+.town-marker-park{background:#367a55}
+.town-marker-shrine{background:#a94d4d}
+.town-marker-school{background:#6b5b9b}
+.town-map-marker:hover,.town-map-marker:focus-visible,.town-map-marker.is-selected{
+  z-index:8;transform:translate(-50%,-50%) scale(1.22);
+  filter:saturate(1.15);box-shadow:0 4px 15px rgba(20,35,55,.5),0 0 0 5px rgba(255,255,255,.8);
+}
+.town-map-marker:focus-visible{outline:3px solid #203d65;outline-offset:5px}
+.town-map-legend{display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;margin:15px 0 0;color:#63748a;font-size:11px}
+.town-map-legend>span{display:inline-flex;align-items:center;gap:7px}
+.town-map-legend i{display:inline-grid;place-items:center;width:24px;height:24px;border:2px solid white;border-radius:50%;font-style:normal;font-weight:900;color:#fff;background:#285f91;box-shadow:0 1px 4px rgba(20,35,55,.35)}
+.town-map-legend .legend-home{background:#f2d88f;color:#263f5d}
+.town-map-legend .legend-park{background:#367a55}
+.town-map-legend .legend-shrine{background:#a94d4d}
+.town-map-footnote{margin-top:8px}
+@media(max-width:760px){
+  .town-marker-home{width:31px;height:31px;font-size:19px}
+  .town-marker-station,.town-marker-park,.town-marker-shrine,.town-marker-school{min-width:37px;height:37px;font-size:16px;border-radius:12px}
+  .town-map-legend{gap:8px 14px;font-size:10px}
+}
+
+
+/* A + C direction: tiny illustrated objects blended into the town map */
+.town-map-marker{
+  position:absolute;display:grid;place-items:center;transform:translate(-50%,-58%);
+  cursor:pointer;z-index:2;border:0;padding:0;background:transparent;
+  font-family:'Noto Sans JP',sans-serif;line-height:1;
+  filter:drop-shadow(0 2px 2px rgba(45,58,67,.28));
+  transition:transform .18s ease,filter .18s ease;
+}
+.town-marker-home{
+  width:37px;height:39px;font-size:30px;color:#fff;
+  text-shadow:0 1px 2px rgba(45,58,67,.28);
+}
+.town-marker-station,.town-marker-park,.town-marker-shrine{
+  width:45px;height:45px;border-radius:15px 15px 15px 6px;
+  border:2px solid rgba(255,255,255,.96);
+  background:rgba(255,250,237,.94);
+  box-shadow:0 2px 8px rgba(47,62,72,.22),inset 0 0 0 1px rgba(103,119,126,.12);
+  font-size:27px;
+}
+.town-marker-station{background:#e6f1fa}
+.town-marker-park{background:#e9f3df}
+.town-marker-shrine{background:#f8e8e4}
+.town-map-marker::after{
+  content:attr(title);position:absolute;left:50%;top:calc(100% + 4px);
+  transform:translate(-50%,2px);white-space:nowrap;
+  padding:3px 7px;border-radius:6px;background:rgba(255,255,255,.94);
+  color:#34475a;font-size:10px;font-weight:700;letter-spacing:.01em;
+  box-shadow:0 1px 5px rgba(35,50,65,.15);
+  opacity:0;pointer-events:none;transition:opacity .15s ease,transform .15s ease;
+}
+.town-map-marker:hover,.town-map-marker:focus-visible,.town-map-marker.is-selected{
+  z-index:9;transform:translate(-50%,-65%) scale(1.12);
+  filter:drop-shadow(0 4px 4px rgba(35,50,65,.32));
+}
+.town-map-marker:hover::after,.town-map-marker:focus-visible::after,.town-map-marker.is-selected::after{
+  opacity:1;transform:translate(-50%,0);
+}
+.town-map-marker:focus-visible{outline:2px solid #355d82;outline-offset:4px;border-radius:12px}
+.town-map-legend i{width:25px;height:25px;border-radius:9px;font-size:14px}
+.town-map-legend .legend-home{font-size:18px}
+.town-map-legend .legend-station,.town-map-legend .legend-park,.town-map-legend .legend-shrine{
+  background:#fff;color:initial;box-shadow:0 1px 4px rgba(20,35,55,.2)
+}
+@media(max-width:760px){
+  .town-marker-home{width:33px;height:35px;font-size:27px}
+  .town-marker-station,.town-marker-park,.town-marker-shrine{width:40px;height:40px;font-size:24px}
+  .town-map-marker::after{font-size:9px}
+}

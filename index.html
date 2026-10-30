@@ -76,6 +76,7 @@
         <a href="#about" data-i18n="navAbout">部について</a>
         <a href="#members" data-i18n="navMembers">部員紹介</a>
         <a href="#schedule" data-i18n="navSchedule">活動予定</a>
+        <a href="#town-map" data-i18n="navTownMap">街の地図</a>
         <a href="#guide" data-i18n="navGuide">学校・世界観</a>
       </nav>
     </div>
@@ -253,6 +254,32 @@
           <button class="legend-filter active" type="button" data-filter="birthday" aria-pressed="true"><i class="dot birthday"></i><span data-i18n="birthdayLegend">部員の誕生日</span></button>
         </div>
         <p class="small-note" data-i18n="scheduleNote">2019年度の学事日程とバレーボール部の予定です。</p>
+      </div>
+    </section>
+
+    <section class="town-map-section" id="town-map">
+      <div class="wrap section">
+        <div class="section-heading">
+          <div><p class="eyebrow blue" data-i18n="townMapEyebrow">SEIREI TOWN</p><h2 data-i18n="townMapTitle">街の案内</h2></div>
+          <p class="section-lead" data-i18n="townMapHint">点にカーソルを合わせるか、タップしてみてください。</p>
+        </div>
+        <div class="town-map-frame" id="townMapFrame">
+          <img src="seirei-town-map.png" alt="青嶺高校周辺の街並みを描いたイラストマップ" class="town-map-image">
+          <div class="town-home-markers" id="townHomeMarkers" aria-label="街のスポットとキャラクターの家"></div>
+        </div>
+        <div class="town-home-popup" id="townHomePopup" role="status" aria-live="polite" hidden>
+          <button class="town-popup-close" id="townPopupClose" type="button" aria-label="閉じる">×</button>
+          <span class="town-popup-kicker" id="townPopupKicker">SPOT</span>
+          <strong id="townPopupName"></strong>
+          <span id="townPopupDescription" class="town-popup-residence"></span>
+        </div>
+        <div class="town-map-legend" aria-label="Map legend">
+          <span><i class="legend-home">🏠</i><span data-i18n="townLegendHome">キャラクターの家</span></span>
+          <span><i class="legend-station">🚉</i><span data-i18n="townLegendStation">駅</span></span>
+          <span><i class="legend-park">🌳</i><span data-i18n="townLegendPark">公園</span></span>
+          <span><i class="legend-shrine">⛩</i><span data-i18n="townLegendShrine">神社</span></span>
+        </div>
+        <p class="town-map-footnote" data-i18n="townMapFootnote">住宅マーカーは物語上の位置です。実際の住所を示すものではありません。</p>
       </div>
     </section>
 
