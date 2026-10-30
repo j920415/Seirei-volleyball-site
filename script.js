@@ -61,6 +61,26 @@ const translations = {
     eventSemester:'신학기 시작 · 입학식', eventClasses:'정상 수업 시작', eventRecruit:'신입 부원 모집', eventResume:'수업 재개', eventMidterm:'1학기 중간고사', eventNishigo:'니시고와 연습 경기', eventCamp:'단기 합숙', eventInterhigh:'인터하이 사이타마현 예선', eventSports:'체육대회 (학급 대항전)', eventFinal:'1학기 기말고사', eventClosing:'1학기 종업식', eventSummer:'여름방학 시작', eventGoldenStart:'골든위크 시작', eventGoldenEnd:'골든위크 마지막 날'
   }
 };
+
+// Additional second-semester and tournament calendar labels.
+Object.assign(translations.ja, {
+  eventInterhighTournament:'インターハイ全国大会', eventJointCamp:'埼玉県内高校合同合宿',
+  eventSecondSemester:'2学期始業式', eventCultureFestival:'文化祭',
+  eventSecondMidterm:'2学期中間試験', eventPracticeMatch:'練習試合',
+  eventHarukoQualifiers:'春高バレー埼玉県予選', eventSecondFinal:'2学期期末試験',
+  eventSecondClosing:'2学期終業式', eventWinterBreak:'冬休み開始',
+  eventHarukoNationals:'春高バレー全国大会', eventThirdSemester:'3学期授業再開',
+  eventYearEndExams:'学年末試験', eventGraduation:'卒業式', eventThirdClosing:'3学期終業式', eventSpringBreak:'春休み開始'
+});
+Object.assign(translations.ko, {
+  eventInterhighTournament:'인터하이 전국대회', eventJointCamp:'사이타마현 고교 배구부 합동 합숙',
+  eventSecondSemester:'2학기 시업식', eventCultureFestival:'문화제',
+  eventSecondMidterm:'2학기 중간고사', eventPracticeMatch:'배구부 연습경기',
+  eventHarukoQualifiers:'하루코 사이타마현 예선', eventSecondFinal:'2학기 기말고사',
+  eventSecondClosing:'2학기 종업식', eventWinterBreak:'겨울방학 시작',
+  eventHarukoNationals:'하루코 전국대회', eventThirdSemester:'3학기 수업 재개',
+  eventYearEndExams:'학년말 시험', eventGraduation:'졸업식', eventThirdClosing:'3학기 종업식', eventSpringBreak:'봄방학 시작'
+});
 let currentLanguage = 'ja';
 
 const members = {
@@ -299,7 +319,24 @@ const events = {
   '2019-06-14': [{labelKey:'eventSports', type:'academic'}],
   '2019-07-08': [{labelKey:'eventFinal', type:'academic', range:true}],
   '2019-07-19': [{labelKey:'eventClosing', type:'academic'}],
-  '2019-07-20': [{labelKey:'eventSummer', type:'academic'}]
+  '2019-07-20': [{labelKey:'eventSummer', type:'academic'}],
+  '2019-07-30': [{labelKey:'eventInterhighTournament', type:'club', range:true}],
+  '2019-08-11': [{labelKey:'eventJointCamp', type:'club', range:true}],
+  '2019-09-02': [{labelKey:'eventSecondSemester', type:'academic'}],
+  '2019-09-26': [{labelKey:'eventCultureFestival', type:'academic', range:true}],
+  '2019-10-15': [{labelKey:'eventSecondMidterm', type:'academic', range:true}],
+  '2019-10-19': [{labelKey:'eventPracticeMatch', type:'club'}],
+  '2019-11-02': [{labelKey:'eventPracticeMatch', type:'club'}],
+  '2019-11-08': [{labelKey:'eventHarukoQualifiers', type:'club', range:true}],
+  '2019-12-10': [{labelKey:'eventSecondFinal', type:'academic', range:true}],
+  '2019-12-23': [{labelKey:'eventSecondClosing', type:'academic'}],
+  '2019-12-24': [{labelKey:'eventWinterBreak', type:'academic'}],
+  '2020-01-05': [{labelKey:'eventHarukoNationals', type:'club', range:true}],
+  '2020-01-08': [{labelKey:'eventThirdSemester', type:'academic'}],
+  '2020-02-25': [{labelKey:'eventYearEndExams', type:'academic', range:true}],
+  '2020-03-02': [{labelKey:'eventGraduation', type:'academic'}],
+  '2020-03-19': [{labelKey:'eventThirdClosing', type:'academic'}],
+  '2020-03-20': [{labelKey:'eventSpringBreak', type:'academic'}]
 };
 const activeFilters = {academic:true, club:true, holiday:true};
 const dateRanges = [
@@ -307,7 +344,15 @@ const dateRanges = [
   {start:'2019-05-13', end:'2019-05-15', type:'academic'},
   {start:'2019-05-17', end:'2019-05-19', type:'club'},
   {start:'2019-05-25', end:'2019-05-26', type:'club'},
-  {start:'2019-07-08', end:'2019-07-10', type:'academic'}
+  {start:'2019-07-08', end:'2019-07-10', type:'academic'},
+  {start:'2019-07-30', end:'2019-08-03', type:'club'},
+  {start:'2019-08-11', end:'2019-08-17', type:'club'},
+  {start:'2019-09-26', end:'2019-09-27', type:'academic'},
+  {start:'2019-10-15', end:'2019-10-17', type:'academic'},
+  {start:'2019-11-08', end:'2019-11-10', type:'club'},
+  {start:'2019-12-10', end:'2019-12-12', type:'academic'},
+  {start:'2020-01-05', end:'2020-01-12', type:'club'},
+  {start:'2020-02-25', end:'2020-02-27', type:'academic'}
 ];
 function rangeTypeFor(dateKey) {
   const range = dateRanges.find(item => dateKey >= item.start && dateKey <= item.end);
