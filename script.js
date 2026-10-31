@@ -18,9 +18,9 @@ const translations = {
     aboutBody:'異なる個性を持つ部員たちが、一つのチームとなってボールをつないでいきます。コートの中では一つの点に真剣に向き合い、コートの外では仲間と共に青嶺らしい学校生活を送っています。',
     factPlace:'活動場所', factPlaceValue:'第一体育館', factActivities:'活動内容', factActivitiesValue:'練習・練習試合', factValues:'大切にしていること', factValuesValue:'声をつなぐこと、仲間を信じること',
     fictionNote:'※このページは創作世界「青嶺高校」の設定紹介サイトです。', membersTitle:'部員紹介', membersLead:'同じコートに立つ、個性豊かな仲間たち。',
-    searchLabel:'部員を探す', searchPlaceholder:'名前・ポジションで検索…', comingMembers:'ほかの部員たち', profileSoon:'プロフィール準備中', emptySearch:'該当する部員が見つかりませんでした。',
+    searchLabel:'部員を探す', searchPlaceholder:'名前・ポジション・背番号で検索…', comingMembers:'ほかの部員たち', profileSoon:'プロフィール準備中', emptySearch:'該当する部員が見つかりませんでした。',
     scheduleTitle:'活動予定', scheduleLead:'練習も試合も、一日ずつ積み重ねて。', mon:'月', tue:'火', wed:'水', thu:'木', fri:'金', sat:'土', sun:'日',
-    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', birthdayLegend:'部員の誕生日', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。',
+    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', birthdayLegend:'部員の誕生日', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。', seasonSpring:'春', seasonSummer:'夏', seasonAutumn:'秋', seasonWinter:'冬',
     guideTitle:'青嶺について', guideLead:'この物語の舞台と、コートの向こう側。', guideSchoolTitle:'学校について', guideSchoolBody:'埼玉県にある架空の県立高校。物語の舞台となる学校です。',
     guideClubTitle:'バレーボール部', guideClubBody:'選手たちとマネージャーが、練習や学校生活を通して日々を重ねています。',
     guideRelationTitle:'登場人物の関係', guideRelationBody:'プロフィールや関係性は、設定が確定したものから順次追加していきます。',
@@ -36,8 +36,8 @@ const translations = {
     koutaPosition:'アウトサイドヒッター', harutoPosition:'リベロ', koutaNote:'明るく、チームの空気を動かす存在。',
     koutaProfileNote:'高校時代の設定をもとにしたプロフィールです。学年・身長・誕生日などの詳細は、確定した設定に合わせて追記できます。',
     harutoProfileNote:'落ち着いた守備でチームを支えるリベロ。', prevMonth:'前の月', nextMonth:'次の月', abilitiesTitle:'PLAYER ABILITIES', abilitiesScale:'能力値 · 1–10', abilityAttack:'攻撃力', abilityDefense:'守備力', abilityServe:'サーブ', abilityReceive:'レシーブ', abilityBlock:'ブロック', abilitySpeed:'スピード',
-    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', birthdayLegend:'部員の誕生日', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。',
-    eventSemester:'新学期開始・入学式', eventClasses:'授業開始', eventRecruit:'新入部員募集', eventResume:'授業再開', eventMidterm:'1学期中間試験', eventNishigo:'西高との練習試合', eventCamp:'短期合宿', eventInterhigh:'インターハイ埼玉県予選', eventSports:'体育祭（クラス対抗）', eventFinal:'1学期期末試験', eventClosing:'1学期終業式', eventSummer:'夏休み開始', eventGoldenStart:'ゴールデンウィーク開始', eventGoldenEnd:'ゴールデンウィーク最終日'
+    academicLegend:'学事日程', clubLegend:'部活動予定', holidayLegend:'祝日・特別休暇', birthdayLegend:'部員の誕生日', scheduleNote:'2019年度の学事日程とバレーボール部の予定です。', seasonSpring:'春', seasonSummer:'夏', seasonAutumn:'秋', seasonWinter:'冬',
+    eventSemester:'新学期開始・入学式', eventClasses:'授業開始', eventRecruit:'新入部員募集', eventResume:'授業再開', eventMidterm:'1学期中間試験', eventNishigo:'練習試合（西高）', eventCamp:'短期合宿', eventInterhigh:'インターハイ埼玉県予選', eventSports:'体育祭', eventFinal:'1学期期末試験', eventClosing:'1学期終業式', eventSummer:'夏休み開始', eventGoldenStart:'ゴールデンウィーク', eventGoldenEnd:'ゴールデンウィーク最終日'
   },
   ko: {
     schoolNameShort:'사이타마현립 세이레이 고등학교', navAbout:'부 소개', navMembers:'선수 소개', navSchedule:'활동 일정', navTownMap:'마을 지도', navGuide:'학교·세계관',
@@ -47,9 +47,9 @@ const translations = {
     aboutBody:'서로 다른 개성을 가진 부원들이 하나의 팀으로 모여 함께 공을 이어 나갑니다. 코트 안에서는 한 점을 위해 진지하게, 코트 밖에서는 동료들과 함께 세이레이만의 학교생활을 만들어 갑니다.',
     factPlace:'활동 장소', factPlaceValue:'제1체육관', factActivities:'활동 내용', factActivitiesValue:'훈련·연습 경기', factValues:'소중히 여기는 것', factValuesValue:'목소리를 잇는 것, 동료를 믿는 것',
     fictionNote:'※ 이 페이지는 창작 세계 「세이레이 고등학교」의 설정 소개 사이트입니다.', membersTitle:'선수 소개', membersLead:'같은 코트에 서는 개성 넘치는 동료들.',
-    searchLabel:'선수 검색', searchPlaceholder:'이름·포지션으로 검색…', comingMembers:'그 밖의 부원들', profileSoon:'프로필 준비 중', emptySearch:'검색 결과가 없습니다.',
+    searchLabel:'선수 검색', searchPlaceholder:'이름·포지션·등번호로 검색…', comingMembers:'그 밖의 부원들', profileSoon:'프로필 준비 중', emptySearch:'검색 결과가 없습니다.',
     scheduleTitle:'활동 일정', scheduleLead:'훈련도 시합도, 하루씩 차곡차곡.', mon:'월', tue:'화', wed:'수', thu:'목', fri:'금', sat:'토', sun:'일',
-    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', birthdayLegend:'부원 생일', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.',
+    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', birthdayLegend:'부원 생일', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.', seasonSpring:'봄', seasonSummer:'여름', seasonAutumn:'가을', seasonWinter:'겨울',
     guideTitle:'세이레이 소개', guideLead:'이 이야기의 무대와 코트 너머의 풍경.', guideSchoolTitle:'학교 소개', guideSchoolBody:'사이타마현에 있는 가상의 현립 고등학교. 이야기의 무대가 되는 학교입니다.',
     guideClubTitle:'배구부', guideClubBody:'선수들과 매니저가 훈련과 학교생활을 함께하며 하루하루를 쌓아 갑니다.',
     guideRelationTitle:'등장인물 관계', guideRelationBody:'프로필과 관계는 설정이 확정되는 대로 차례차례 추가합니다.',
@@ -59,8 +59,8 @@ const translations = {
     koutaPosition:'아웃사이드 히터', harutoPosition:'리베로', koutaNote:'밝은 성격으로 팀 분위기를 움직이는 존재.',
     koutaProfileNote:'고등학교 시절 설정을 바탕으로 한 프로필입니다. 학년·신장·생일 등은 확정된 설정에 맞춰 추가할 수 있습니다.',
     harutoProfileNote:'차분한 수비로 팀을 뒷받침하는 리베로.', prevMonth:'이전 달', nextMonth:'다음 달', abilitiesTitle:'PLAYER ABILITIES', abilitiesScale:'능력치 · 1–10', abilityAttack:'공격력', abilityDefense:'수비력', abilityServe:'서브', abilityReceive:'리시브', abilityBlock:'블로킹', abilitySpeed:'스피드',
-    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', birthdayLegend:'부원 생일', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.',
-    eventSemester:'신학기 시작 · 입학식', eventClasses:'정상 수업 시작', eventRecruit:'신입 부원 모집', eventResume:'수업 재개', eventMidterm:'1학기 중간고사', eventNishigo:'니시고와 연습 경기', eventCamp:'단기 합숙', eventInterhigh:'인터하이 사이타마현 예선', eventSports:'체육대회 (학급 대항전)', eventFinal:'1학기 기말고사', eventClosing:'1학기 종업식', eventSummer:'여름방학 시작', eventGoldenStart:'골든위크 시작', eventGoldenEnd:'골든위크 마지막 날'
+    academicLegend:'학사일정', clubLegend:'배구부 일정', holidayLegend:'공휴일·특별 연휴', birthdayLegend:'부원 생일', scheduleNote:'2019학년도 학사일정과 배구부 일정입니다.', seasonSpring:'봄', seasonSummer:'여름', seasonAutumn:'가을', seasonWinter:'겨울',
+    eventSemester:'신학기 시작 · 입학식', eventClasses:'정상 수업 시작', eventRecruit:'신입 부원 모집', eventResume:'수업 재개', eventMidterm:'1학기 중간고사', eventNishigo:'연습 경기(니시고)', eventCamp:'단기 합숙', eventInterhigh:'인터하이 사이타마현 예선', eventSports:'체육제', eventFinal:'1학기 기말고사', eventClosing:'1학기 종업식', eventSummer:'여름방학 시작', eventGoldenStart:'골든위크', eventGoldenEnd:'골든위크 마지막 날'
   }
 };
 
@@ -289,20 +289,92 @@ document.querySelectorAll('[data-member]').forEach(card => {
 document.getElementById('dialogClose').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
 
+// Roster search: Japanese/Kana/Korean/Romaji names, positions and jersey numbers.
 const search = document.getElementById('memberSearch');
 const memberCards = [...document.querySelectorAll('#memberGrid [data-member]')];
 const emptyMessage = document.getElementById('emptyMessage');
-search.addEventListener('input', () => {
-  const query = search.value.trim().toLowerCase();
+
+const memberJerseyNumbers = {
+  ritsu: '1', takuya: '2', kouta: '3', haruki: '5',
+  haruto: '6', taiyou: '7', aki: '8'
+};
+const memberSearchAliases = {
+  ritsu: ['FUJISAKI RITSU', 'フジサキ リツ', '세터', 'setter', 'セッター', '主将', '주장', 'captain'],
+  takuya: ['ISHIDA TAKUYA', 'イシダ タクヤ', '아포짓', 'オポジット', 'opposite', '副主将', '부주장', 'vice captain'],
+  kouta: ['TAKAHASHI KOUTA', 'タカハシ コウタ', '아웃사이드 히터', 'アウトサイドヒッター', 'outside hitter', 'OH'],
+  haruki: ['SHIRAKAWA HARUKI', 'シラカワ ハルキ', '아포짓', 'オポジット', 'opposite'],
+  haruto: ['MIZUNO HARUTO', 'ミズノ ハルト', '리베로', 'リベロ', 'libero'],
+  taiyou: ['AKAGI TAIYOU', 'アカギ タイヨウ', '미들 블로커', 'ミドルブロッカー', 'middle blocker', 'MB'],
+  aki: ['SHINOHARA AKI', 'シノハラ アキ', '미들 블로커', 'ミドルブロッカー', 'middle blocker', 'MB']
+};
+
+function normalizeSearchText(value) {
+  return String(value ?? '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[‐‑‒–—―]/g, '-')
+    .replace(/[^\p{L}\p{N}#]+/gu, ' ')
+    .trim();
+}
+
+function memberMatchesSearch(card, rawQuery) {
+  const key = card.dataset.member;
+  const member = members[key];
+  if (!member) return false;
+
+  const query = normalizeSearchText(rawQuery);
+  if (!query) return true;
+
+  const jersey = memberJerseyNumbers[key];
+  // A bare number or #number means jersey number, not a substring of a birth year.
+  const jerseyOnly = query.match(/^#?(\d+)(?:番|번)?$/);
+  if (jerseyOnly) return jersey === jerseyOnly[1];
+
+  const fields = [
+    member.name,
+    member.roman,
+    member.searchTerms,
+    card.dataset.name,
+    card.querySelector('.member-info')?.textContent,
+    memberSearchAliases[key]?.join(' '),
+    `#${jersey} ${jersey}番 ${jersey}번 등번호 背番号 jersey number`
+  ].map(normalizeSearchText).filter(Boolean);
+
+  const compactQuery = query.replace(/\s+/g, '');
+  const compactFields = fields.map(field => field.replace(/\s+/g, ''));
+  if (compactFields.some(field => field.includes(compactQuery))) return true;
+
+  const tokens = query.split(/\s+/).filter(Boolean);
+  return tokens.every(token => {
+    const tokenJersey = token.match(/^#?(\d+)(?:番|번)?$/);
+    if (tokenJersey) return jersey === tokenJersey[1];
+    return fields.some(field => field.includes(token));
+  });
+}
+
+function applyMemberSearch() {
+  if (!search || !emptyMessage) return;
   let shown = 0;
   memberCards.forEach(card => {
-    const m = members[card.dataset.member];
-    const visible = (m.searchTerms + ' ' + card.dataset.name).toLowerCase().includes(query);
+    const visible = memberMatchesSearch(card, search.value);
     card.hidden = !visible;
     if (visible) shown++;
   });
   emptyMessage.hidden = shown > 0;
-});
+  emptyMessage.setAttribute('aria-live', 'polite');
+}
+
+if (search && emptyMessage) {
+  search.addEventListener('input', applyMemberSearch);
+  search.addEventListener('search', applyMemberSearch);
+  search.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && search.value) {
+      search.value = '';
+      applyMemberSearch();
+    }
+  });
+  applyMemberSearch();
+}
 
 let displayedYear = 2019;
 let displayedMonth = 3; // April 2019: start of the Japanese academic year.
@@ -373,20 +445,117 @@ function rangeTypeFor(dateKey) {
   return range ? range.type : null;
 }
 function isGoldenWeek(dateKey) { return rangeTypeFor(dateKey) === 'holiday'; }
+function calendarSeasonKey(monthIndex) {
+  if ([2, 3, 4].includes(monthIndex)) return 'seasonSpring';
+  if ([5, 6, 7].includes(monthIndex)) return 'seasonSummer';
+  if ([8, 9, 10].includes(monthIndex)) return 'seasonAutumn';
+  return 'seasonWinter';
+}
+
+function calendarEventSymbol(eventData) {
+  if (eventData.type === 'birthday') return '🎂';
+  if (eventData.type === 'holiday') return '☼';
+  if (eventData.type === 'club') return '🏐';
+  const key = eventData.labelKey || '';
+  if (key === 'eventSemester') return '✎';
+  if (key === 'eventClasses' || key === 'eventResume' || key === 'eventThirdSemester') return '✿';
+  if (/Midterm|Final|Exams|YearEnd/i.test(key)) return '✎';
+  if (key === 'eventSummer' || key === 'eventWinterBreak' || key === 'eventSpringBreak') return '☀';
+  if (key === 'eventSports' || key === 'eventCultureFestival') return '✦';
+  return '✧';
+}
+
+function appendCalendarEventContent(node, eventData) {
+  const symbol = document.createElement('span');
+  symbol.className = 'calendar-event-symbol';
+  symbol.setAttribute('aria-hidden', 'true');
+  symbol.textContent = calendarEventSymbol(eventData);
+  const label = document.createElement('span');
+  label.className = 'calendar-event-label';
+  label.textContent = eventData.label || tLabel(eventData.labelKey);
+  node.append(symbol, label);
+}
+
+// Calendar date helpers use UTC to avoid local-time and daylight-saving shifts.
+function addCalendarDays(dateKey, amount) {
+  const [year, month, day] = dateKey.split('-').map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day + amount));
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}-${String(date.getUTCDate()).padStart(2, '0')}`;
+}
+
+function calendarDaysBetween(startKey, endKey) {
+  const [sy, sm, sd] = startKey.split('-').map(Number);
+  const [ey, em, ed] = endKey.split('-').map(Number);
+  return Math.round((Date.UTC(ey, em - 1, ed) - Date.UTC(sy, sm - 1, sd)) / 86400000);
+}
+
+// Place the title on the first date visible in the current month.
+// A Sunday-starting event that continues into the next week moves its title
+// to Monday because the Sunday segment is only one cell wide. Saturday starts
+// keep the title on Saturday: the Sat-Sun segment has enough room for short labels.
+function calendarRangeLabelDate(range) {
+  const monthStart = `${displayedYear}-${String(displayedMonth + 1).padStart(2, '0')}-01`;
+  const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
+  const monthEnd = `${displayedYear}-${String(displayedMonth + 1).padStart(2, '0')}-${String(daysInMonth).padStart(2, '0')}`;
+  const firstVisibleDate = range.start < monthStart ? monthStart : range.start;
+  if (firstVisibleDate > range.end || firstVisibleDate > monthEnd) return null;
+
+  const [year, month, day] = firstVisibleDate.split('-').map(Number);
+  const mondayFirstWeekday = (new Date(Date.UTC(year, month - 1, day)).getUTCDay() + 6) % 7;
+  const daysToSunday = 6 - mondayFirstWeekday;
+  const firstWeekEnd = addCalendarDays(firstVisibleDate, daysToSunday);
+  const visibleDaysInFirstSegment = Math.min(
+    calendarDaysBetween(firstVisibleDate, range.end) + 1,
+    daysToSunday + 1,
+    calendarDaysBetween(firstVisibleDate, monthEnd) + 1
+  );
+
+  // Only move a Sunday-starting multi-day title to Monday. Saturday starts
+  // have two cells (Saturday and Sunday), so keep the true start date label.
+  if (visibleDaysInFirstSegment === 1 && range.end > firstVisibleDate && firstVisibleDate === firstWeekEnd) {
+    const nextMonday = addCalendarDays(firstWeekEnd, 1);
+    if (nextMonday <= range.end && nextMonday <= monthEnd) return nextMonday;
+  }
+  return firstVisibleDate;
+}
+
+function calendarRangeLabelSpan(range, labelDate) {
+  const [year, month, day] = labelDate.split('-').map(Number);
+  const mondayFirstWeekday = (new Date(Date.UTC(year, month - 1, day)).getUTCDay() + 6) % 7;
+  const daysThroughSunday = 7 - mondayFirstWeekday;
+  const daysRemaining = calendarDaysBetween(labelDate, range.end) + 1;
+  const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  const daysRemainingInMonth = daysInMonth - day + 1;
+  return Math.max(1, Math.min(daysThroughSunday, daysRemaining, daysRemainingInMonth));
+}
+
+function tLabel(key) {
+  return key ? translations[currentLanguage][key] || key : '';
+}
+
 function renderCalendar() {
   const t = translations[currentLanguage];
   monthTitle.textContent = currentLanguage === 'ja'
     ? `${displayedYear}年 ${displayedMonth + 1}月`
     : `${displayedYear}년 ${displayedMonth + 1}월`;
+  const seasonTag = document.getElementById('calendarSeason');
+  if (seasonTag) seasonTag.textContent = t[calendarSeasonKey(displayedMonth)];
   calendarGrid.innerHTML = '';
   const firstDay = new Date(displayedYear, displayedMonth, 1);
   const mondayOffset = (firstDay.getDay() + 6) % 7;
   const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
   const prevMonthDays = new Date(displayedYear, displayedMonth, 0).getDate();
   const totalCells = Math.ceil((mondayOffset + daysInMonth) / 7) * 7;
+  // Small, repeatable diary doodles decorate only otherwise-empty dates.
+  const doodlesByDay = {4:'flower', 6:'spark', 10:'star', 18:'flower', 21:'spark', 25:'heart'};
+  const doodleGlyphs = {flower:'✿', star:'✦', spark:'✧', heart:'♡'};
+
   for (let i = 0; i < totalCells; i++) {
     const cell = document.createElement('div');
+    const weekday = i % 7;
     cell.className = 'day-cell';
+    if (weekday === 5) cell.classList.add('sat');
+    if (weekday === 6) cell.classList.add('sun');
     let day, dateKey, current = true;
     if (i < mondayOffset) {
       day = prevMonthDays - mondayOffset + i + 1; current = false;
@@ -400,32 +569,64 @@ function renderCalendar() {
       day = i - mondayOffset + 1;
       dateKey = `${displayedYear}-${String(displayedMonth+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
     }
+    cell.dataset.date = dateKey;
     if (!current) cell.classList.add('muted');
     const rangeType = rangeTypeFor(dateKey);
-    const num = document.createElement('span'); num.className = 'day-num'; num.textContent = day; cell.appendChild(num);
+    const num = document.createElement('span');
+    num.className = 'day-num';
+    num.textContent = day;
+    cell.appendChild(num);
+
     const dayEvents = [...(events[dateKey] || [])];
     const birthday = recurringBirthdays.find(item => item.month === displayedMonth + 1 && item.day === day);
     if (current && birthday) dayEvents.push({type:'birthday', label: currentLanguage === 'ja' ? birthday.ja : birthday.ko});
+
     // Keep multi-day bars inside the displayed month; adjacent-month cells stay visually clean.
     if (current && rangeType && activeFilters[rangeType]) {
-      const rangeEvent = dayEvents.find(eventData => eventData.type === rangeType);
+      const rangeInfo = dateRanges.find(item => item.type === rangeType && dateKey >= item.start && dateKey <= item.end);
+      const rangeLabelDate = rangeInfo ? calendarRangeLabelDate(rangeInfo) : null;
+      // Use the event stored at the actual range start, even when that start
+      // falls in the previous month. This keeps the same label on the first
+      // visible date of the range in each monthly view.
+      const rangeEvent = rangeInfo && dateKey === rangeLabelDate
+        ? (events[rangeInfo.start] || []).find(eventData => eventData.type === rangeType)
+        : null;
+
       const bar = document.createElement('span');
       bar.className = `day-event ${rangeType} range-segment`;
       if (rangeEvent) {
         bar.classList.add('range-mark');
-        bar.textContent = t[rangeEvent.labelKey];
+        cell.classList.add('range-label-host');
+        const labelSpan = calendarRangeLabelSpan(rangeInfo, dateKey);
+        // Use standard percentage + pixel calc values rather than CSS multiplication,
+        // which can be unsupported in some mobile browsers. The label host has cell
+        // padding of 8px per side on desktop and 3px per side on mobile.
+        bar.style.setProperty('--range-span', String(labelSpan));
+        bar.style.setProperty('--range-width-desktop', `calc(${labelSpan * 100}% + ${labelSpan * 16}px)`);
+        bar.style.setProperty('--range-width-mobile', `calc(${labelSpan * 100}% + ${labelSpan * 6}px)`);
+        appendCalendarEventContent(bar, rangeEvent);
       } else {
         bar.setAttribute('aria-hidden', 'true');
       }
       cell.appendChild(bar);
     }
+
     dayEvents.forEach(eventData => {
       if (!activeFilters[eventData.type] || (eventData.range && rangeType === eventData.type)) return;
       const event = document.createElement('span');
       event.className = `day-event ${eventData.type}`;
-      event.textContent = eventData.label || t[eventData.labelKey];
+      appendCalendarEventContent(event, eventData);
       cell.appendChild(event);
     });
+
+    // Keep stickers subtle and clear of any real event text.
+    if (current && dayEvents.length === 0 && !rangeType && doodlesByDay[day]) {
+      const doodle = document.createElement('span');
+      doodle.className = `calendar-cell-doodle ${doodlesByDay[day]}`;
+      doodle.setAttribute('aria-hidden', 'true');
+      doodle.textContent = doodleGlyphs[doodlesByDay[day]];
+      cell.appendChild(doodle);
+    }
     calendarGrid.appendChild(cell);
   }
 }

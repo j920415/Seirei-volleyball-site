@@ -6,7 +6,10 @@
   <meta name="theme-color" content="#24446f">
   <meta name="description" content="埼玉県立青嶺高等学校 バレーボール部の紹介ページ。部員紹介、活動予定、チームについて。">
   <title>バレーボール部 | 埼玉県立青嶺高等学校</title>
-  <link rel="stylesheet" href="style.css?v=20261031-mobilefix1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261031-calendarsticker1-3">
 </head>
 <body>
 
@@ -244,8 +247,8 @@
         <p class="section-lead" data-i18n="scheduleLead">練習も試合も、一日ずつ積み重ねて。</p>
       </div>
       <div class="schedule-box">
-        <div class="schedule-top"><div><span class="eyebrow">CLUB CALENDAR</span><h3 id="monthTitle">2019年 4月</h3></div><div class="month-controls"><button id="prevMonth" aria-label="前の月">←</button><button id="nextMonth" aria-label="次の月">→</button></div></div>
-        <div class="calendar-week"><span data-i18n="mon">月</span><span data-i18n="tue">火</span><span data-i18n="wed">水</span><span data-i18n="thu">木</span><span data-i18n="fri">金</span><span data-i18n="sat">土</span><span data-i18n="sun">日</span></div>
+        <div class="schedule-top"><div class="schedule-month-heading"><span class="eyebrow calendar-eyebrow"><span class="calendar-twinkle" aria-hidden="true">✦</span> CLUB CALENDAR</span><div class="schedule-monthline"><h3 id="monthTitle">2019年 4月</h3><span class="calendar-title-flower" aria-hidden="true">✿</span><span id="calendarSeason" class="calendar-season-tag" aria-live="polite">봄</span></div></div><div class="month-controls"><button id="prevMonth" aria-label="前の月">←</button><button id="nextMonth" aria-label="次の月">→</button></div></div>
+        <div class="calendar-week"><span data-i18n="mon">月</span><span data-i18n="tue">火</span><span data-i18n="wed">水</span><span data-i18n="thu">木</span><span data-i18n="fri">金</span><span class="sat" data-i18n="sat">土</span><span class="sun" data-i18n="sun">日</span></div>
         <div class="calendar-grid" id="calendarGrid"></div>
         <div class="schedule-legend" role="group" aria-label="予定の種類">
           <button class="legend-filter active" type="button" data-filter="academic" aria-pressed="true"><i class="dot academic"></i><span data-i18n="academicLegend">学事日程</span></button>
@@ -253,7 +256,7 @@
           <button class="legend-filter active" type="button" data-filter="holiday" aria-pressed="true"><i class="dot holiday"></i><span data-i18n="holidayLegend">祝日・特別休暇</span></button>
           <button class="legend-filter active" type="button" data-filter="birthday" aria-pressed="true"><i class="dot birthday"></i><span data-i18n="birthdayLegend">部員の誕生日</span></button>
         </div>
-        <p class="small-note" data-i18n="scheduleNote">2019年度の学事日程とバレーボール部の予定です。</p>
+        <div class="calendar-footer"><p class="small-note" data-i18n="scheduleNote">2019年度の学事日程とバレーボール部の予定です。</p><span class="calendar-footer-stickers" aria-hidden="true">✿　✧　♡</span></div>
       </div>
     </section>
 
@@ -310,6 +313,6 @@
     <button class="dialog-close" id="dialogClose" aria-label="閉じる" data-i18n-aria="close">×</button>
     <div id="dialogContent"></div>
   </dialog>
-  <script src="script.js?v=20261031-introfix1"></script>
+  <script src="script.js?v=20261031-calendarsticker1-3"></script>
 </body>
 </html>

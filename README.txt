@@ -1,22 +1,11 @@
-SEIREI MOBILE UPDATE V2
+SEIREI CALENDAR STICKER UPDATE v1.2
 
-Replace these three files in the GitHub Pages repository:
-- index.html
-- style.css
-- script.js
+This update corrects multi-day event title placement at month and week boundaries.
 
-Keep all existing site assets and folders unchanged, especially:
-- images/
-- audio/
-- seirei-town-map.png
+- Golden Week remains April 27, 2019 through May 6, 2019.
+- In the April 2019 view, the Golden Week title is placed on April 27 (Saturday), with the bar continuing through April 28.
+- In the May 2019 view, the title is placed on May 1, the first visible date of the continuing event in that month.
+- Sunday-starting multi-day events that continue into the following week may still move their title to Monday so the label has enough width.
+- Existing intro recovery, mobile layout, OST player, search, calendar data and filters are retained.
 
-Changes:
-- Mobile calendar event labels can wrap instead of being clipped with ellipses.
-- Calendar day rows can grow to accommodate wrapped event labels.
-- Month navigation and legend spacing are tightened for small screens.
-- The OST player becomes a compact single-row dock on mobile.
-- Extra bottom scroll space keeps final page content reachable above the fixed player.
-- The recovered intro HTML/JS behavior is retained. Only the stylesheet cache version was updated.
-
-Desktop layout rules are not changed by the new mobile-only CSS block.
-The JavaScript is carried forward unchanged from the working intro-recovery version.
+Replace index.html, style.css and script.js in the repository. Keep existing images/ and audio/ folders.
