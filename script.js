@@ -481,6 +481,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
   let entered = false;
 
+  // Mobile browsers may restore a page from the back-forward cache while the
+  // intro door transition is in progress. If that happens, restore the intro
+  // instead of leaving only its pale background visible.
+  window.addEventListener('pageshow', (event) => {
+    if (!event.persisted) return;
+    if (!intro.hidden && intro.classList.contains('is-opening')) {
+      intro.classList.remove('is-opening');
+      entered = false;
+      player.hidden = true;
+    }
+  });
+
   function updatePlayButton(isPlaying) {
     toggle.textContent = isPlaying ? '♫ PAUSE' : '♫ PLAY';
     toggle.setAttribute('aria-pressed', String(isPlaying));
